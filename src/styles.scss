@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(assets/css/fontiran.css);
+@import url(assets/css/fontiran2.css);
+body {
+  font-family: IRANSans, iranyekan ,roboto ,Arial ;
+  font-weight: normal;
+  font-style: normal;
+}
+.color-purple {
+  color: #6c299b;
+}
+
+
+/* All color of site's text define here*/
+.txt-custom-black {
+  color: black;
+}
+.txt-custom-white {
+  color: rgb(255,255,255);
+}
+
+
+/* All color of site's background define here*/
+.bg-custom-gray {
+  background-color: rgb(255,255,255);
+}
+
+.bg-custom-purple {
+  background-color: #6c299b;
+}
+
+.bg-custom-lighter-blue {
+  background-color: #Faffff;
+}
+
+.bg-custom-light-blue {
+  background-color: #E7fff4;
+}
+
+
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1199px;
+  }
+}
+
+// This css are smart and use for making context right to left or left to right based on UI design
+.d-rtl {
+  direction: rtl;
+}
+
+.d-ltr {
+  direction: ltr;
+}
+
+//html, body { height: 100%; }
+//body { margin: 0; font-family: 'Roboto', sans-serif; }

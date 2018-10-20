@@ -1,0 +1,70 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand bg-custom-gray menu-direction header-height"
+     *ngIf="router.url !== '/login' &&
+      router.url !== '/sign-up' && !authService.isAuthenticated()">
+  <div class="container">
+
+    <!-- Navbar brand -->
+    <a routerLinkActive="active" routerLink="/" class="navbar-brand">
+      <img src="assets/imgs/icons/carnotic.png" height="50">
+    </a>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse">
+
+      <!-- Right Links -->
+      <ul class="nav navbar-nav">
+        <li><a routerLinkActive="active" routerLink="/pricing" class="txt-custom-black title-property">قیمت گذاری</a>
+        </li>
+        <li><a routerLinkActive="active" routerLink="/features" class="txt-custom-black title-property">ویژگی ها</a>
+        </li>
+        <li><a routerLinkActive="active" routerLink="/solutions" class="txt-custom-black title-property">راه کارها</a>
+        </li>
+        <li><a routerLinkActive="active" routerLink="/contact-us" class="txt-custom-black title-property">تماس با ما</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav mr-auto">
+        <li>
+          <button routerLinkActive="active" routerLink="/sign-up" type="button" class="btn header-btn">شروع رایگان
+          </button>
+        </li>
+        <li class="login-place-modify"><a routerLinkActive="active" routerLink="/login"
+                                          class="txt-custom-black login-property">ورود</a></li>
+      </ul>
+
+    </div>
+    <!-- Collapsible content -->
+  </div>
+
+</nav>
+<!--Navbar-->
+
+<!--Navbar-->
+<nav class="navbar navbar-expand bg-custom-gray
+menu-direction header-height header-shadow" style="padding: 0"
+     *ngIf="authService.isAuthenticated()">
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" style="width: 100%">
+
+    <div style="text-align: center">
+      <a class="social-account-profile"><img src="assets/imgs/icons/user.svg" height="20"></a>
+    </div>
+
+    <div class="middle-content">
+      <a class="social"><img src="assets/imgs/icons/instagram.svg" height="15"></a>
+      <a class="social"><img src="assets/imgs/icons/telegram.svg" height="15"></a>
+      <a class="social"><img src="assets/imgs/icons/linkedin.svg" height="15"></a>
+      <a class="social"><img src="assets/imgs/icons/twitter.svg" height="15"></a>
+      <a class="social"><img src="assets/imgs/icons/plus.svg" height="10"></a>
+    </div>
+
+    <div style="text-align: center">
+      <a class="profile"><img src="assets/imgs/icons/user.svg" height="20"></a>
+    </div>
+
+  </div>
+  <!-- Collapsible content -->
+</nav>
+<!--Navbar-->

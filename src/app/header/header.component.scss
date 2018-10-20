@@ -1,0 +1,111 @@
+.menu-direction {
+  direction: rtl;
+}
+
+.title-property {
+  font-size: 15px;
+  padding: 10px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.header-height {
+  height: 70px;
+}
+
+.header-btn {
+  background-color: rgb(253, 199, 27);
+  color: black;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: 150px;
+  display: inline-block;
+  border: none;
+}
+
+.login-property {
+  font-size: 15px;
+  padding: 5px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-place-modify {
+  padding: 13px 13px 10px 13px;
+}
+
+// After Login Part
+.header-shadow {
+  -webkit-box-shadow: 0px 4px 19px 0px #c2c2c2;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0px 4px 19px 0px #c2c2c2;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         0px 4px 19px 0px #c2c2c2;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+//box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+
+
+.left-content {
+
+}
+
+.middle-content {
+  width: 95%;
+  text-align: center;
+}
+
+.right-content {
+
+}
+
+
+/* Create a custom circle */
+.social-account-profile {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #6c299b;
+  margin-right: 20px;
+  display: block;
+  padding-top: 4px;
+}
+
+/* Create a custom circle */
+.social {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #c2c2c2;
+  margin-left: 10px;
+  margin-right: 0;
+  display: inline-block;
+  padding-top: 4px;
+}
+
+/* Create a custom circle */
+.profile {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #6c299b;
+  margin-right: 0;
+  margin-left: 20px;
+  display: block;
+  padding-top: 4px;
+}
+
+.fit-icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}

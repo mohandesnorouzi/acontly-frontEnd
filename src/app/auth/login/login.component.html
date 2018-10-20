@@ -1,0 +1,69 @@
+<!--Main div-->
+<!--<div class="container">-->
+<div class="bg">
+  <!-- Content -->
+  <div class="back-rectangle">
+
+    <!-- Flex box -->
+    <div class="flex-grow-1 flex-box-position">
+      <div class="p-2 flex-box-txt">
+        <a routerLinkActive="active" routerLink="/login" class="title-property txt-custom-white">ورود</a>
+      </div>
+      <div class="p-2 flex-box-txt">
+        <a routerLinkActive="active" routerLink="/sign-up" class="title-property txt-custom-white">عضویت</a>
+      </div>
+    </div>
+    <!-- Flex box -->
+
+    <!--Grid column-->
+    <div class="front-rectangle text-center"> <!--//text-center need to make button align in center of screen-->
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">  <!--// syncing form with my html in this line-->
+        <div class="form-group">
+          <label class="d-rtl" for="input1"></label>
+          <input type="text"
+                 id="input1"
+                 formControlName="email"
+                 placeholder="ایمیل *">
+          <div *ngFor="let validation of loginValidationMessages.email">
+            <span *ngIf="loginForm.get('email').hasError(validation.type) &&
+             loginForm.get('email').dirty" class="help-block">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" d-rtl" for="input2"></label>
+          <input type="text"
+                 id="input2"
+                 formControlName="password"
+                 placeholder="رمز عبور *"
+                 autoComplete="off">
+          <div *ngFor="let validation of loginValidationMessages.password">
+            <span *ngIf="loginForm.get('password').hasError(validation.type) &&
+             loginForm.get('password').dirty" class="help-block">
+              {{validation.message}}
+            </span>
+          </div>
+        </div>
+
+        <!-- Default unchecked box -->
+        <div>
+          <label class="check-box-position">من را به خاطر بسپار
+            <input type="checkbox" id="defaultUnchecked">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <!-- Default unchecked box -->
+
+        <li class="login-btn-position">
+          <button [disabled]="!loginForm.valid" type="submit" class="btn login-btn">
+            ورود به پنل
+          </button>
+        </li>
+      </form>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!-- Content -->
+</div>

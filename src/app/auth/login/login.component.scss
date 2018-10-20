@@ -1,0 +1,181 @@
+// Css for Value Proposition background and overall section div
+.bg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 50px;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+.back-rectangle {
+  height: 438px;
+  width: 721px;
+  min-height: 313px;
+  box-shadow: 0 0 25px black; //applying shadow to 4 sides of card
+  border-radius: 5px;
+  position: relative;
+  /* gradient shining border */
+  background-image: linear-gradient(to bottom right, #6c299b, #55d6be);
+  background-repeat: no-repeat;
+  //background-size: 100% 78px; // first number for width and second number for height of background
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-rectangle {
+  height: 416px;
+  width: 659px;
+  min-height: 313px;
+  background-color: white;
+  //box-shadow: 0 0 25px #c1c1c1; //applying shadow to 4 sides of card
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 100px;
+  padding-top: 40px;
+  //background-size: 100% 78px; // first number for width and second number for height of background
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .front-rectangle {
+    margin-top: 50px;
+  }
+}
+
+.title-property {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 500;
+  position: relative;
+}
+
+.title-property:hover {
+  color: #55ecda;
+}
+
+.title-position {
+  padding-left: 275px;
+}
+
+input[type=text] {
+  height: 34px;
+  width: 398px;
+  border-radius: 18px;
+  border: 1px solid #55d6be;
+  direction: rtl;
+  padding-right: 20px;
+  font-size: 13px;
+  color: black;
+  margin-top: 25px;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 1px solid #6c299b;
+}
+
+input[type=submit] {
+  background-color: #E7fff4;
+}
+
+// Removing the yellow autoFill background in chrome
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+input.ng-invalid.ng-dirty {
+  border: 1px solid #c90000;
+}
+
+::placeholder {
+  color: #c2c2c2;
+}
+
+.flex-box-position {
+  margin-bottom: 380px;
+  max-width: 659px;
+}
+
+.flex-box-txt {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.check-box-position {
+  margin-right: 145px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 500;
+  float: right; //make go to right
+  margin-top: 10px;
+  color: black;
+}
+
+/* Hide the browser's default radio button */
+.check-box-position input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #d8d8d8;
+  display: inline-block;
+  top: 6px;
+  cursor: pointer;
+  margin-left: 7px;
+}
+
+/* On mouse-over, add a grey background color */
+.check-box-position:hover input ~ .checkmark {
+  border: 1px solid #55d6be;
+}
+
+/* When the radio button is checked, add a background */
+.check-box-position input:checked ~ .checkmark {
+  background-color: #55d6be;
+}
+
+.login-btn {
+  background-color: #6c299b;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: 150px;
+  display: inline-block;
+  border: none;
+}
+
+.login-btn-position {
+  display: block;
+  margin-top: 90px;
+}
+
+
+.help-block {
+  font-size: 11px;
+  color: #c90000;
+  font-weight: 500;
+  display: block;
+  margin-top: 5px;
+  width: 506px;
+  direction: rtl;
+  position: absolute;
+  text-align: right;
+}

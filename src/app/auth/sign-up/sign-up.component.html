@@ -1,0 +1,200 @@
+<!--Main div-->
+<!--<div class="container">-->
+<div class="bg">
+  <!-- Content -->
+  <div class="back-rectangle">
+
+    <!-- Flex box -->
+    <div class="flex-grow-1 flex-box-position">
+      <div class="p-2 flex-box-txt">
+        <a routerLinkActive="active" routerLink="/login" class="title-property txt-custom-white">ورود</a>
+      </div>
+      <div class="p-2 flex-box-txt">
+        <a routerLinkActive="active" routerLink="/sign-up" class="title-property txt-custom-white">عضویت</a>
+      </div>
+    </div>
+    <!-- Flex box -->
+
+
+    <!--Grid column-->
+    <div class="front-rectangle text-center"> <!--//text-center need to make button align in center of screen-->
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+
+
+        <div class="flex-box2-txt" style="float: right ;text-align: right">
+          <label class="d-rtl" for="input2"></label>
+          <input type="text"
+                 id="input2"
+                 formControlName="firstName"
+                 placeholder="نام *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.firstName">
+            <span *ngIf="signUpForm.get('firstName').hasError(validation.type) &&
+             signUpForm.get('firstName').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+
+        <div class="flex-box2-txt" style="text-align: right">
+          <label class="d-rtl" for="input1"></label>
+          <input type="text"
+                 id="input1"
+                 formControlName="lastName"
+                 placeholder="نام خانوادگی *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.lastName">
+            <span *ngIf="signUpForm.get('lastName').hasError(validation.type) &&
+             signUpForm.get('lastName').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+
+        <div class="flex-box2-txt" style="float: right ;text-align: right">
+          <label class="d-rtl" for="input4"></label>
+          <input type="text"
+                 id="input4"
+                 formControlName="companyName"
+                 placeholder="نام شرکت *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.companyName">
+            <span *ngIf="signUpForm.get('companyName').hasError(validation.type) &&
+             signUpForm.get('companyName').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+        <div class="flex-box2-txt" style="text-align: right">
+          <label class="d-rtl" for="input3"></label>
+          <input type="text"
+                 id="input3"
+                 formControlName="companySize"
+                 placeholder="تعداد اعضای مجموعه *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.companySize">
+            <span *ngIf="signUpForm.get('companySize').hasError(validation.type) &&
+             signUpForm.get('companySize').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+
+        <div class="flex-box2-txt" style="float: right ;text-align: right">
+          <label class="d-rtl" for="input6"></label>
+          <input type="text"
+                 id="input6"
+                 formControlName="companyField"
+                 placeholder="حوزه فعالیت *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.companyField">
+            <span *ngIf="signUpForm.get('companyField').hasError(validation.type) &&
+             signUpForm.get('companyField').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+        <div class="flex-box2-txt" style="text-align: right">
+          <label class="d-rtl" for="input5"></label>
+          <input type="text"
+                 id="input5"
+                 formControlName="jobPosition"
+                 placeholder="سمت *"
+                 autoComplete="off">
+          <div class="help-block" *ngFor="let validation of signupValidationMessages.jobPosition">
+            <span *ngIf="signUpForm.get('jobPosition').hasError(validation.type) &&
+             signUpForm.get('jobPosition').dirty">
+            {{validation.message}}
+          </span>
+          </div>
+        </div>
+
+
+        <div class="flex-box3-txt">
+          <label class="d-rtl" for="input7"></label>
+          <input type="text"
+                 id="input7"
+                 formControlName="email"
+                 placeholder="ایمیل *">
+          <row class="help-block1" *ngFor="let validation of signupValidationMessages.email">
+            <span *ngIf="signUpForm.get('email').hasError(validation.type) &&
+             signUpForm.get('email').dirty">
+            {{validation.message}}
+          </span>
+          </row>
+        </div>
+
+        <div class="flex-box3-txt">
+          <label class="d-rtl" for="input8"></label>
+          <input type="text"
+                 id="input8"
+                 formControlName="password"
+                 placeholder="رمز عبور *"
+                 autoComplete="off">
+          <div style="position: relative" class="help-block1">
+            <span *ngIf="signUpForm.get('password').hasError('required') &&
+            signUpForm.get('password').dirty">
+            وارد کردن رمز ورود الزامیست!
+          </span>
+          </div>
+        </div>
+
+
+        <!-- Default unchecked box -->
+        <div>
+
+          <label class="check-box-position">
+            یک حرف کوچک
+            <input type="checkbox" id="defaultUnchecked">
+            <span class="checkmark1" *ngIf="!signUpForm.get('password').hasError('required') &&
+            !signUpForm.get('password').hasError('lowercase') ;else otherCheckmark1"></span>
+            <ng-template #otherCheckmark1>
+              <span class="checkmark"></span>
+            </ng-template>
+          </label>
+
+          <label class="check-box-position">یک حرف بزرگ
+            <input type="checkbox" id="defaultUnchecked1">
+            <span class="checkmark1" *ngIf="!signUpForm.get('password').hasError('required') &&
+            !signUpForm.get('password').hasError('uppercase') ;else otherCheckmark1"></span>
+            <ng-template #otherCheckmark1>
+              <span class="checkmark"></span>
+            </ng-template>
+          </label>
+
+          <label class="check-box-position">یک عدد
+            <input type="checkbox" id="defaultUnchecked2">
+            <span class="checkmark1" *ngIf="!signUpForm.get('password').hasError('required') &&
+            !signUpForm.get('password').hasError('numbercase') ;else otherCheckmark1"></span>
+            <ng-template #otherCheckmark1>
+              <span class="checkmark"></span>
+            </ng-template>
+          </label>
+
+          <label class="check-box-position">هشت کاراکتر
+            <input type="checkbox" id="defaultUnchecked3">
+            <span class="checkmark1" *ngIf="!signUpForm.get('password').hasError('required') &&
+            !signUpForm.get('password').hasError('minlength') ;else otherCheckmark"></span>
+            <ng-template #otherCheckmark>
+              <span class="checkmark"></span>
+            </ng-template>
+          </label>
+
+        </div>
+        <!-- Default unchecked box -->
+
+
+        <li class="sign-up-btn-position">
+          <button [disabled]="!signUpForm.valid" type="submit" class="btn sign-up-btn">ایجاد حساب کاربری</button>
+        </li>
+      </form>
+    </div>
+    <!--Grid column-->
+  </div>
+  <!-- Content -->
+</div>
