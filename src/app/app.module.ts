@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AppComponent} from './app.component';
 
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
@@ -31,7 +31,12 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {OverviewComponent} from './app-home/overview/overview.component';
 import {OverviewContentComponent} from './app-home/overview/overview-content/overview-content.component';
 import {OverviewAnalysisComponent} from './app-home/overview/overview-analysis/overview-analysis.component';
-import {ErrorInterceptor, TokenInterceptor} from './services/interceptor.service';
+import {TokenInterceptor} from './services/interceptor.service';
+import {AppGlobals} from './services/app-globals.service';
+import { ContentComponent } from './app-home/content/content.component';
+import { ContentProductionComponent } from './app-home/content/content-production/content-production.component';
+import { AllContentComponent } from './app-home/content/all-content/all-content.component';
+import { InstagramComponent } from './app-home/content/instagram/instagram.component';
 
 
 @NgModule({
@@ -51,7 +56,11 @@ import {ErrorInterceptor, TokenInterceptor} from './services/interceptor.service
     SidenavComponent,
     OverviewComponent,
     OverviewContentComponent,
-    OverviewAnalysisComponent
+    OverviewAnalysisComponent,
+    ContentComponent,
+    ContentProductionComponent,
+    AllContentComponent,
+    InstagramComponent
   ],
   imports: [
     BrowserModule,
@@ -62,19 +71,20 @@ import {ErrorInterceptor, TokenInterceptor} from './services/interceptor.service
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
-  providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService,
+  providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptor,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ErrorInterceptor,
+    //   multi: true
+    // }
 
   ],
   bootstrap: [AppComponent],

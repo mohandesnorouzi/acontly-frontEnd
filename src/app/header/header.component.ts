@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {AppGlobals} from '../services/app-globals.service';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +10,16 @@ import {AuthService} from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  // public a: boolean;
 
-  constructor(public router: Router, public authService: AuthService) {
-
-    // this.a = authService.isAuthenticated();
-    // console.log(this.a);
+  constructor(public router: Router, public authService: AuthService,
+              public appGlobal: AppGlobals) {
   }
 
   ngOnInit() {
   }
 
+  onLogoutSubmit() {
+    this.authService.logOutUser();
+    this.router.navigate(['/']);
+  }
 }

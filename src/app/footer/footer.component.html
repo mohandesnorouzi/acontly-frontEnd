@@ -1,7 +1,7 @@
 <!--Footer section-->
 <div class="bg-custom-purple footer-bg"
      *ngIf="router.url !== '/login' &&
-      router.url !== '/sign-up' && !authService.isAuthenticated()">
+      router.url !== '/sign-up' && !appGlobal.isAuthenticated">
 
   <p>
     footer works!

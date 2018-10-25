@@ -1,7 +1,7 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand bg-custom-gray menu-direction header-height"
      *ngIf="router.url !== '/login' &&
-      router.url !== '/sign-up' && !authService.isAuthenticated()">
+      router.url !== '/sign-up' && !appGlobal.isAuthenticated">
   <div class="container">
 
     <!-- Navbar brand -->
@@ -43,7 +43,7 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand bg-custom-gray
 menu-direction header-height header-shadow" style="padding: 0"
-     *ngIf="authService.isAuthenticated()">
+     *ngIf="appGlobal.isAuthenticated">
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" style="width: 100%">
@@ -61,7 +61,7 @@ menu-direction header-height header-shadow" style="padding: 0"
     </div>
 
     <div style="text-align: center">
-      <a class="profile"><img src="assets/imgs/icons/user.svg" height="20"></a>
+      <a class="profile" (click)="onLogoutSubmit()"><img src="assets/imgs/icons/user.svg" height="20"></a>
     </div>
 
   </div>

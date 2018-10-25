@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {SidenavService} from '../../services/sidenav.service';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
@@ -10,20 +10,13 @@ import {Router} from '@angular/router';
 })
 export class SidenavComponent implements OnInit {
 
-  private navSize: string;
-  // @ViewChild('sidenav') public sidenav: MatSidenavModule;
+  @ViewChild('closeSideNav') closeSideNav: ElementRef;
+  @ViewChild('openSideNav') openSideNav: ElementRef;
+  @ViewChild('subTitleSideNav') subTitleSideNav: ElementRef;
+  @Input() titleID: string;
 
-  @ViewChild('mybackSidenav') mybackSidenav: ElementRef;
-  @ViewChild('main') main: ElementRef;
-
-  // @HostListener('sidenav') click(eventdata: Event) {
-  //   this.navSize = document.getElementById('sidenav').style.width;
-  //
-  //   if (this.navSize === '140') {
-  //     closeSidenav();
-  //   }
-  //   openSidenav();
-  // }
+  @HostListener('mouseenter') mouseover(eventData: Event) {
+  }
 
   constructor(private sidenavService: SidenavService, public authService: AuthService,
               private router: Router) {
@@ -33,28 +26,51 @@ export class SidenavComponent implements OnInit {
   }
 
 
-  onLogoutSubmit() {
-    this.authService.logOutUser();
-    this.router.navigate(['/']);
+  // Manage opening and closing of main part of sideNav
+  Open() {
+
+    document.getElementById('openSideNav').style.width = '200px';
+    document.getElementById('closeSideNav').style.width = '0';
+    document.getElementById('subTitleSideNav').style.width = '0';
   }
 
-  openSidenav() {
-
-    this.navSize = document.getElementById('sidenav').style.width;
-    if (this.navSize === '140') {
-      document.getElementById('mybackSidenav').style.width = '0';
-
-    } else {
-      document.getElementById('mybackSidenav').style.width = '140px';
-    }
-    // document.getElementById('mybackSidenav').style.width = '140px';
-    // document.getElementById('main').style.marginRight = '250px';
-    console.log(this.navSize);
+  Close() {
+    // const navProperty = document.getElementById('openSideNav');
+    // const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
+    //
+    // const subTitleNavProperty = document.getElementById('subTitleSideNav');
+    // const subTitleNavWidth = window.getComputedStyle(subTitleNavProperty, null).getPropertyValue('width');
+    document.getElementById('openSideNav').style.width = '0';
+    document.getElementById('subTitleSideNav').style.width = '0';
+    document.getElementById('closeSideNav').style.width = '60px';
   }
 
-  closeSidenav() {
-    document.getElementById('mybackSidenav').style.width = '0';
-    // document.getElementById('main').style.marginRight = '0';
-    console.log(this.main);
+  // SideNav(id) {
+  //
+  //   const navProperty = document.getElementById('subTitleSideNav');
+  //   const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
+  //
+  //   if (navWidth === '0px') {
+  //     document.getElementById('subTitleSideNav').style.width = '140px';
+  //     this.titleID = id;
+  //   } else {
+  //     document.getElementById('titleSideNav').style.width = '0';
+  //   }
+  // }
+
+  subSideNav(id) {
+    const navProperty = document.getElementById('subTitleSideNav');
+    const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
+
+      if (navWidth === '0px') {
+        document.getElementById('subTitleSideNav').style.width = '140px';
+        this.titleID = id;
+      } else {
+        document.getElementById('subTitleSideNav').style.width = '0';
+      }
+    // document.getElementById('subTitleSideNav').style.width = '140px';
+    // console.log(id);
+    // this.titleID = id;
   }
 }
+

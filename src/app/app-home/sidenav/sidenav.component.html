@@ -1,96 +1,153 @@
 <div class="d-rtl">
-  <!--<div class="sidenavbar-menu-icon">-->
-  <!--<a (click)="openSidenav()"><img src="assets/imgs/icons/menu.svg" height="50"></a>-->
-  <!--</div>-->
 
-  <div class="sidenavbar" style="text-align: right;">
+  <div class="narrowSideNavBar" id="closeSideNav" style="text-align: right;">
 
-    <div>
+    <div class="narrowSideNavBar-scroll">
 
-      <li class="li-margin">
-        <a (click)="openSidenav()"><img src="assets/imgs/icons/menu.svg" height="20"></a>
+      <li class="li-margin-icon">
+        <a class="icon-menu" (click)="Open()"></a>
       </li>
 
-      <li class="li-margin">
-        <a (click)="onLogoutSubmit()"><img src="assets/imgs/icons/content-overview.svg" height="20"></a>
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content-overview"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/bar-chart.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./analysis-overview"></a>
       </li>
 
-      <hr class="hr-style">
+      <hr class="hr-style" style="margin-bottom: -16px; margin-top: 13px">
 
-      <li class="li-margin" style="margin-top: 10px">
-        <img src="assets/imgs/icons/content.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content/production"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/calendar.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/team-member.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/notification.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/analysis.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/crm.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
-      <li class="li-margin">
-        <img src="assets/imgs/icons/folder.svg" height="20">
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink="./content"
+           (click)="subSideNav('content-production')"></a>
       </li>
 
     </div>
   </div>
 
 
-  <div class="back-sidenavbar" id="mybackSidenav" #mybackSidenav style="text-align: right;">
+  <div class="main-sideNavBar" id="openSideNav" style="text-align: right">
 
-    <div style="padding-top: 52px">
+    <div class="main-sideNavBar-scroll">
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" routerLinkActive="active" routerLink="./content">محتوا</a>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="icon-menu" (click)="Close()"></a>
       </li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" routerLinkActive="active" routerLink="./analysis">آمار و ارقام</a>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-overview">
+          محتوا</a>
       </li>
 
-      <hr class="hr-style">
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./analysis-overview">
+          آمار و ارقام</a>
+      </li>
 
-      <li class="li-margin2" style="margin-top: 10px">
-        <a class="sidenavbar-txt" href="">محتوا</a></li>
+      <hr class="hr-style" style="margin-bottom: -16px; margin-top: 13px" >
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">تقویم</a></li>
+      <li class="li-margin-icon" style="margin-top: 5px" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content/production"
+           (click)="subSideNav('content-production')">
+          محتوا</a>
+      </li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">اعضای تیم</a></li>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">تقویم</a></li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">اعلان ها</a></li>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">اعضای تیم</a></li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">آنالیز</a></li>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">اعلان ها</a></li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">CRM</a></li>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">آنالیز</a></li>
 
-      <li class="li-margin2">
-        <a class="sidenavbar-txt" href="">پروژه ها</a></li>
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">مدیریت مخاطبان</a></li>
+
+      <li class="li-margin-icon" style="direction: rtl">
+        <a class="sideNavBar-txt icon-calendar"
+           routerLinkActive="active" routerLink="./content-production"
+           (click)="subSideNav('content-production')">پروژه ها</a></li>
 
     </div>
 
   </div>
+
+
+  <div class="subtitle-sideNavBar" id="subTitleSideNav" style="text-align: right">
+
+    <div *ngIf="titleID == 'content-production'" style="padding-top: 68px" >
+
+      <li class="">
+        <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
+           routerLinkActive="active" routerLink="./content/production">
+          ایجاد محتوا</p></li>
+
+      <li class="">
+        <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
+           routerLinkActive="active" routerLink="./content/all">
+          همه محتواها</p></li>
+
+    </div>
+
+  </div>
+
 </div>
 
 

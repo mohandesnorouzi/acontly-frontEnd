@@ -1,17 +1,14 @@
 import {Injectable, OnDestroy, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/catch';
-
+import {HttpClient} from '@angular/common/http';
+import {AppGlobals} from './app-globals.service';
 
 
 @Injectable() // This is for let some service injectable in other service
 export class AuthService implements OnDestroy {
 
-  isLogin: boolean;
-
-  constructor(private router: Router, private httpClient: HttpClient) {
+  constructor(private router: Router, private httpClient: HttpClient,
+              private appGlobal: AppGlobals) {
   }
 
   // Sign-up method
@@ -23,55 +20,29 @@ export class AuthService implements OnDestroy {
 
     // email and password purple key read from postman
     const data = {email: email, password: password};
-    return this.httpClient.post('http://185.69.54.21/back_end/web/site/login', data)
-      // .catch((err, caught) => {
-      //   console.log(err);
-      //   console.log(caught);
-      //   const ob = new Observable((observer) => {
-      //     observer.next(123);
-      //   });
-      //   return ob;
-      //   return Observable.throw(err);
-      // })
-      ;
+    return this.httpClient.post('http://185.69.54.21/back_end/web/site/login', data);
   }
 
-  isUserLogin(input) {
-    return this.isLogin = input;
-  }
 
   logOutUser() {
     localStorage.removeItem('token');
-    this.isUserLogin(false);
+    this.router.navigate(['/']);
+    // this.appGlobal.isAuthenticated = false;
+    // console.log(this.appGlobal.isAuthenticated);
   }
 
   public getToken(): string {
     return localStorage.getItem('token');
   }
 
-  checkTokenValidation() {
-
-    const token = this.getToken();
-    console.log(token);
+   checkTokenValidation() {
     return this.httpClient.get('http://185.69.54.21/back_end/web/site/check-token');
   }
 
-  // checkTokenValidation() {
-  //
-  //   const token = this.getToken();
-  //   console.log(token);
-  //   return this.httpClient.get('http://185.69.54.21/back_end/web/site/check-token', {
-  //     headers: new HttpHeaders().append('Authorization', `Bearer ${token}`)
-  //   });
-  // }
-
-  public isAuthenticated() {
-    return false;
-  }
-
   ngOnDestroy() {
-
   }
-
 
 }
+
+
+

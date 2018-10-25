@@ -1,66 +1,205 @@
-.sidenavbar {
+// Set style for only icon section of sideNavBar
+.narrowSideNavBar {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 60px; //#5ba7b4
+  width: 60px;
   //background:linear-gradient(to bottom, #c4d7e6 0, #c4d7e6 33%, #66a5ad 33%, #66a5ad 66%, #ff0000 66%, #ff0000 100%);
   //background-image: linear-gradient(to bottom, #6c299b 0,#6c299b 70% ,#5ba7b4 80%, #55d6be 100%);
-  background-image: linear-gradient(to bottom, #6c299b 0, #5ba7b4 70%, #55d6be 100%);
+  //background-image: linear-gradient(to bottom, #6c299b 0, #5ba7b4 95%, #55d6be 100%);
+  background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
   background-repeat: no-repeat;
   position: fixed;
-  height: 1000px;
-  //height: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-  z-index: 1;
+  top: 70px;
+  bottom: 0px;
+  height: 100%;
+  overflow-y: auto;
+  direction: ltr;
 }
 
-.sidenavbar-txt {
-  font-size: 15px;
-  color: #c2c2c2;
-  line-height: 25.0px;
+// This css make this section show perfect scroll
+.narrowSideNavBar-scroll {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  position: absolute;
+  height: 660px;
+  overflow: hidden;
+  direction: ltr;
 }
 
-.sidenavbar-txt:hover {
-  color: #55ecda;
+// Scroll settings
+#closeSideNav::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  opacity: 0.01;
 }
 
-.sidenavbar-txt:focus {
-  color: #55ecda;
+// Scroll settings
+#closeSideNav::-webkit-scrollbar {
+  width: 4px;
 }
 
-.li-margin {
+// Scroll settings
+#closeSideNav::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #5ba7b4;
+}
+
+// Modify icon position
+.li-margin-icon {
   margin-top: 30px;
   margin-right: 20px;
 }
 
-.sidenavbar-menu-icon {
-  margin-top: 15px;
+// Set style for main section of sideNavBar
+.main-sideNavBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 70px;
+  bottom: 0px;
+  height: 100%;
+  overflow-y: auto;
+  direction: ltr;
+}
+
+// This css make this section show perfect scroll
+.main-sideNavBar-scroll {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: absolute;
+  height: 660px;
+  overflow: hidden;
+  direction: ltr;
+}
+
+// Scroll settings
+#openSideNav::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  opacity: 0.01;
+}
+
+// Scroll settings
+#openSideNav::-webkit-scrollbar {
+  width: 4px;
+}
+
+// Scroll settings
+#openSideNav::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #5ba7b4;
+}
+
+// Modify title position
+.li-margin-title {
+  margin-top: 30px;
   margin-right: 20px;
-  cursor: pointer;
+}
+
+// Set style for inner section of sideNavBar -- subtitle
+.subtitle-sideNavBar {
+  list-style-type: none;
+  margin-right: 60px;
+  padding: 0;
+  width: 0px;
+  background-color: #391D4D;
+  top: 70px;
+  bottom: 0px;
+  z-index: 1;
+  height: 700px;
+  overflow: hidden;
+  position: fixed;
+}
+
+.sideNavBar-txt {
+  font-size: 15px;
+  color: #c2c2c2;
+  line-height: 24px;
+}
+
+.sideNavBar-txt:hover {
+  color: #55ecda;
+}
+
+.sideNavBar-txt:focus {
+  color: #55ecda;
 }
 
 .hr-style {
   border: 1px solid #c2c2c2;
 }
 
-
-
-.back-sidenavbar {
-  list-style-type: none;
-  margin-right: 60px;
-  padding: 0;
-  width: 0;
-  background-image: linear-gradient(to bottom, #6c299b 0, #5ba7b4 70%, #55d6be 100%);
-  background-repeat: no-repeat;
-  position: fixed;
-  height: 1000px;
-  //height: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-  z-index: 1;
+[data-icon]:before {
+  content: attr(data-icon);
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.li-margin2 {
-  margin-top: 30px;
+.icon-calendar:before {
+  content: "\61";
+  color: #c2c2c2 !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-calendar:hover:before {
+  color: #55ecda !important;
+}
+
+.icon-calendar:focus:before {
+  color: #55ecda !important;
+}
+
+.icon-menu:before {
+  content: "\62";
+  color: #c2c2c2 !important;
+  font-size: 20px;
+}
+
+.icon-menu:hover:before {
+  color: #55ecda !important;
+}
+
+.icon-menu:focus:before {
+  color: #55ecda !important;
+}
+
+.sideNavBarSubtitle-txt {
+  font-size: 15px;
+  color: #c2c2c2;
+  line-height: 24px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+.sideNavBarSubtitle-txt:hover {
+  background-color: #4b1472;
+  height: 44px;
+}
+
+.sideNavBarSubtitle-txt:focus {
+  color: #55ecda;
+  background-color: #4b1472;
+  height: 44px;
+  outline: none;
 }
