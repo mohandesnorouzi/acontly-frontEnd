@@ -217,3 +217,38 @@ input.ng-invalid.ng-dirty {
   //cursor: pointer;
   margin-left: 4px;
 }
+
+/*the container must be positioned relative:*/
+.select-menu-box {
+  position: relative;
+}
+
+.select-menu-box select {
+  display: none; /*hide original SELECT element:*/
+}
+
+
+.select-dropDown {
+  height: 34px;
+  width: 398px;
+  border-radius: 18px;
+  font-weight: 500;
+  border: 1px solid #55d6be;
+  direction: rtl;
+  padding-right: 20px;
+  font-size: 13px;
+  color: black;
+  margin-top: 25px;
+  outline: none;
+  -webkit-appearance: none; /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  cursor: pointer;
+}
+
+select:focus {
+  border: 1px solid #6c299b;
+}
+
+.option-style {
+  color: black;
+}

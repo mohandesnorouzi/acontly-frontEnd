@@ -37,6 +37,7 @@ import { ContentComponent } from './app-home/content/content.component';
 import { ContentProductionComponent } from './app-home/content/content-production/content-production.component';
 import { AllContentComponent } from './app-home/content/all-content/all-content.component';
 import { InstagramComponent } from './app-home/content/instagram/instagram.component';
+import {CompanySizeService} from './services/company-size.service';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { InstagramComponent } from './app-home/content/instagram/instagram.compo
     AngularFontAwesomeModule
   ],
   providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
+    CompanySizeService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -3,6 +3,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 import {FormValidation} from '../../services/form-validation.service';
+import {CompanySizeService} from '../../services/company-size.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import {CompanySizeModel} from '../../models/company-size.model';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,6 +13,9 @@ import {FormValidation} from '../../services/form-validation.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit, OnDestroy {
+
+  csize: Array<any>;
+  // csize: CompanySizeModel[];
 
   signUpForm: FormGroup;
   @Input() public signupValidationMessages = {
@@ -43,12 +49,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
   };
 
   constructor(private renderer: Renderer2, private router: Router, private authService: AuthService,
-              private formvalidation: FormValidation) {
+              private formvalidation: FormValidation, private companysize: CompanySizeService) {
     this.renderer.setStyle(document.body, 'background-color', '#E7fff4');
-
-    // if (authService.isAuthenticated()) {
-    //   this.router.navigate(['/overview']);
-    // }
   }
 
   ngOnInit() {
@@ -66,7 +68,29 @@ export class SignUpComponent implements OnInit, OnDestroy {
         Validators.required, this.formvalidation.lowerCaseValidator,
         this.formvalidation.upperCaseValidator, this.formvalidation.numberValidator])
     });
+
+    // get company size to show in drop-down list box
+    this.companysize.getCompanySize().subscribe((data) => {
+        console.log(data);
+        if (data['ok']) {
+
+          // this.csize = [
+          //   new CompanySizeModel('1', '2'), new CompanySizeModel('3', '4')
+          // ];
+          // console.log(this.csize);
+          this.csize = data['result'];
+          console.log(this.csize);
+          // const min = data['result'][1]['min'];
+          // const max = data['result'][1]['max'];
+          // console.log(min);
+          // console.log(max);
+        }
+      },
+      (error: HttpErrorResponse) => {
+        console.log('error: ', error.message);
+      });
   }
+
 
   // Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
   onSignUp() {
@@ -80,14 +104,18 @@ export class SignUpComponent implements OnInit, OnDestroy {
     const jobPosition = this.signUpForm.value.jobPosition;
     const email = this.signUpForm.value.email;
     const password = this.signUpForm.value.password;
-    this.authService.signUpUser(email, password);
+    // this.authService.signUpUser(email, password);
+    console.log(this.signUpForm.value);
+
 
     // this.signUpForm.reset({
     //   'email': '',
     //   'password': ''
     // });
   }
+
   ngOnDestroy() {
     this.renderer.removeStyle(document.body, 'background-color');
   }
+
 }

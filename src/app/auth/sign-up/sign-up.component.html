@@ -68,19 +68,39 @@
           </div>
         </div>
 
+
+        <!--<div class="flex-box2-txt dropdown" style="text-align: right">-->
+
+        <!--<button class="dropbtn">تعداد اعضای مجموعه *</button>-->
+        <!--<div class="dropdown-content" *ngFor='let CS of csize; let i=index'>-->
+        <!--<a>{{ CS.min[i] }}</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+
         <div class="flex-box2-txt" style="text-align: right">
           <label class="d-rtl" for="input3"></label>
-          <input type="text"
-                 id="input3"
-                 formControlName="companySize"
-                 placeholder="تعداد اعضای مجموعه *"
-                 autoComplete="off">
-          <div class="help-block" *ngFor="let validation of signupValidationMessages.companySize">
-            <span *ngIf="signUpForm.get('companySize').hasError(validation.type) &&
-             signUpForm.get('companySize').dirty">
-            {{validation.message}}
-          </span>
-          </div>
+          <select *ngIf="signUpForm.get('companySize').invalid ; else valid"
+                  type="text" class="select-dropDown"
+                  style="color: #c2c2c2"
+                  id="input3"
+                  formControlName="companySize">
+            <option [ngValue]="null" disabled selected style="display: none">تعداد اعضای
+              مجموعه *
+            </option>
+            <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
+          </select>
+          <ng-template #valid>
+            <label class="d-rtl" for="input3-1"></label>
+            <select type="text" class="select-dropDown"
+                    id="input3-1"
+                    formControlName="companySize">
+              <option [ngValue]="null" disabled selected style="display: none">تعداد اعضای
+                مجموعه *
+              </option>
+              <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
+            </select>
+          </ng-template>
         </div>
 
 

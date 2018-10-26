@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           localStorage.setItem('token', token);
           this.router.navigate(['/overview']);
 
-
+          // Reset login form after successful submit
           this.loginForm.reset({
             'email': '',
             'password': ''
