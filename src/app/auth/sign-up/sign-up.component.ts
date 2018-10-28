@@ -5,7 +5,8 @@ import {AuthService} from '../../services/auth.service';
 import {FormValidation} from '../../services/form-validation.service';
 import {CompanySizeService} from '../../services/company-size.service';
 import {HttpErrorResponse} from '@angular/common/http';
-import {CompanySizeModel} from '../../models/company-size.model';
+import {IndustryService} from '../../services/industry.service';
+import {CompanyRoleService} from '../../services/company-role.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +16,9 @@ import {CompanySizeModel} from '../../models/company-size.model';
 export class SignUpComponent implements OnInit, OnDestroy {
 
   csize: Array<any>;
-  // csize: CompanySizeModel[];
+  allIndustry: Array<any>;
+  companyRole: Array<any>;
+
 
   signUpForm: FormGroup;
   @Input() public signupValidationMessages = {
@@ -49,7 +52,8 @@ export class SignUpComponent implements OnInit, OnDestroy {
   };
 
   constructor(private renderer: Renderer2, private router: Router, private authService: AuthService,
-              private formvalidation: FormValidation, private companysize: CompanySizeService) {
+              private formvalidation: FormValidation, private companysize: CompanySizeService,
+              private industry: IndustryService, private roles: CompanyRoleService) {
     this.renderer.setStyle(document.body, 'background-color', '#E7fff4');
   }
 
@@ -71,24 +75,35 @@ export class SignUpComponent implements OnInit, OnDestroy {
 
     // get company size to show in drop-down list box
     this.companysize.getCompanySize().subscribe((data) => {
-        console.log(data);
         if (data['ok']) {
-
-          // this.csize = [
-          //   new CompanySizeModel('1', '2'), new CompanySizeModel('3', '4')
-          // ];
-          // console.log(this.csize);
           this.csize = data['result'];
-          console.log(this.csize);
-          // const min = data['result'][1]['min'];
-          // const max = data['result'][1]['max'];
-          // console.log(min);
-          // console.log(max);
         }
       },
       (error: HttpErrorResponse) => {
         console.log('error: ', error.message);
       });
+
+    // get all industry to show in drop-down list box
+    this.industry.getAllIndustry().subscribe((data) => {
+        if (data['ok']) {
+          this.allIndustry = data['result'];
+        }
+      },
+      (error: HttpErrorResponse) => {
+        console.log('error: ', error.message);
+      });
+
+    // get all roles in company to show in drop-down list box
+    this.roles.getAllRoles().subscribe((data) => {
+        console.log(data);
+        if (data['ok']) {
+          this.companyRole = data['result'];
+        }
+      },
+      (error: HttpErrorResponse) => {
+        console.log('error: ', error.message);
+      });
+
   }
 
 

@@ -69,18 +69,9 @@
         </div>
 
 
-        <!--<div class="flex-box2-txt dropdown" style="text-align: right">-->
-
-        <!--<button class="dropbtn">تعداد اعضای مجموعه *</button>-->
-        <!--<div class="dropdown-content" *ngFor='let CS of csize; let i=index'>-->
-        <!--<a>{{ CS.min[i] }}</a>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
         <div class="flex-box2-txt" style="text-align: right">
           <label class="d-rtl" for="input3"></label>
-          <select *ngIf="signUpForm.get('companySize').invalid ; else valid"
+          <select *ngIf="signUpForm.get('companySize').invalid ; else validCompanySize"
                   type="text" class="select-dropDown"
                   style="color: #c2c2c2"
                   id="input3"
@@ -90,7 +81,7 @@
             </option>
             <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
           </select>
-          <ng-template #valid>
+          <ng-template #validCompanySize>
             <label class="d-rtl" for="input3-1"></label>
             <select type="text" class="select-dropDown"
                     id="input3-1"
@@ -104,20 +95,60 @@
         </div>
 
 
-        <div class="flex-box2-txt" style="float: right ;text-align: right">
+        <div class="flex-box2-txt" style="float: right;text-align: right">
           <label class="d-rtl" for="input6"></label>
-          <input type="text"
-                 id="input6"
-                 formControlName="companyField"
-                 placeholder="حوزه فعالیت *"
-                 autoComplete="off">
-          <div class="help-block" *ngFor="let validation of signupValidationMessages.companyField">
-            <span *ngIf="signUpForm.get('companyField').hasError(validation.type) &&
-             signUpForm.get('companyField').dirty">
-            {{validation.message}}
-          </span>
-          </div>
+          <select *ngIf="signUpForm.get('companyField').invalid ; else validCompanyField"
+                  type="text" class="select-dropDown"
+                  style="color: #c2c2c2"
+                  id="input6"
+                  formControlName="companyField">
+            <option [ngValue]="null" disabled selected style="display: none">حوزه فعالیت *
+            </option>
+            <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry"> {{industry.name}}
+            </option>
+          </select>
+          <ng-template #validCompanyField>
+            <label class="d-rtl" for="input6-1"></label>
+            <select type="text" class="select-dropDown"
+                    id="input6-1"
+                    formControlName="companyField">
+              <option [ngValue]="null" disabled selected style="display: none">حوزه فعالیت *
+              </option>
+              <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry">
+                {{industry.name}}
+              </option>
+            </select>
+          </ng-template>
         </div>
+
+
+
+        <!--<div class="flex-box2-txt" style="float: right;text-align: right">-->
+          <!--<label class="d-rtl" for="input5"></label>-->
+          <!--<select *ngIf="signUpForm.get('jobPosition').invalid ; else valid"-->
+                  <!--type="text" class="select-dropDown"-->
+                  <!--style="color: #c2c2c2"-->
+                  <!--id="input5"-->
+                  <!--formControlName="jobPosition">-->
+            <!--<option [ngValue]="null" disabled selected style="display: none">سمت *-->
+            <!--</option>-->
+            <!--<option class="option-style" *ngFor="let jobPosition of companyRole" [ngValue]="jobPosition"> {{jobPosition.role}}-->
+            <!--</option>-->
+          <!--</select>-->
+          <!--<ng-template #valid>-->
+            <!--<label class="d-rtl" for="input5-1"></label>-->
+            <!--<select type="text" class="select-dropDown"-->
+                    <!--id="input5-1"-->
+                    <!--formControlName="jobPosition">-->
+              <!--<option [ngValue]="null" disabled selected style="display: none">سمت *-->
+              <!--</option>-->
+              <!--<option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry">-->
+                <!--{{industry.name}}-->
+              <!--</option>-->
+            <!--</select>-->
+          <!--</ng-template>-->
+        <!--</div>-->
+
 
         <div class="flex-box2-txt" style="text-align: right">
           <label class="d-rtl" for="input5"></label>

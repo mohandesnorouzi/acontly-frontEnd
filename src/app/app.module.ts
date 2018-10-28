@@ -33,11 +33,13 @@ import {OverviewContentComponent} from './app-home/overview/overview-content/ove
 import {OverviewAnalysisComponent} from './app-home/overview/overview-analysis/overview-analysis.component';
 import {TokenInterceptor} from './services/interceptor.service';
 import {AppGlobals} from './services/app-globals.service';
-import { ContentComponent } from './app-home/content/content.component';
-import { ContentProductionComponent } from './app-home/content/content-production/content-production.component';
-import { AllContentComponent } from './app-home/content/all-content/all-content.component';
-import { InstagramComponent } from './app-home/content/instagram/instagram.component';
+import {ContentComponent} from './app-home/content/content.component';
+import {ContentProductionComponent} from './app-home/content/content-production/content-production.component';
+import {AllContentComponent} from './app-home/content/all-content/all-content.component';
+import {InstagramComponent} from './app-home/content/instagram/instagram.component';
 import {CompanySizeService} from './services/company-size.service';
+import {IndustryService} from './services/industry.service';
+import {CompanyRoleService} from './services/company-role.service';
 
 
 @NgModule({
@@ -76,7 +78,7 @@ import {CompanySizeService} from './services/company-size.service';
     AngularFontAwesomeModule
   ],
   providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
-    CompanySizeService,
+    CompanySizeService, IndustryService, CompanyRoleService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
