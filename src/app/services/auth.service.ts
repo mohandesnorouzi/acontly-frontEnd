@@ -17,10 +17,9 @@ export class AuthService implements OnDestroy {
 
   // Login method
   loginUser(email: string, password: string) {
-
     // email and password purple key read from postman
     const data = {email: email, password: password};
-    return this.httpClient.post('http://185.69.54.21/back_end/web/site/login', data);
+    return this.httpClient.post(this.appGlobal.httpRequestURL + 'site/login', data);
   }
 
 
@@ -35,7 +34,7 @@ export class AuthService implements OnDestroy {
     return localStorage.getItem('token');
   }
 
-   checkTokenValidation() {
+  checkTokenValidation() {
     return this.httpClient.get('http://185.69.54.21/back_end/web/site/check-token');
   }
 
