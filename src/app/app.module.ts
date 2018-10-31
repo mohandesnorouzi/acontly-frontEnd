@@ -40,6 +40,7 @@ import {InstagramComponent} from './app-home/content/instagram/instagram.compone
 import {CompanySizeService} from './services/company-size.service';
 import {IndustryService} from './services/industry.service';
 import {CompanyRoleService} from './services/company-role.service';
+import {ModalComponent} from './modal/modal.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import {CompanyRoleService} from './services/company-role.service';
     ContentComponent,
     ContentProductionComponent,
     AllContentComponent,
-    InstagramComponent
+    InstagramComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,7 @@ import {CompanyRoleService} from './services/company-role.service';
     AngularFontAwesomeModule
   ],
   providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
-    CompanySizeService, IndustryService, CompanyRoleService,
+    CompanySizeService, IndustryService, CompanyRoleService, ModalComponent,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -47,9 +47,12 @@ menu-direction header-height header-shadow" style="padding: 0"
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" style="width: 100%">
-
+    <!--First must call projectModal from modal.component-->
+    <app-modal #projectModal></app-modal>
     <div style="text-align: center">
-      <a class="social-account-profile"><img src="assets/imgs/icons/user.svg" height="20"></a>
+      <a class="social-account-profile icon-plus"
+         (click)="projectModal.openModal()"
+         data-toggle="modal" data-target="#projctModal"></a>
     </div>
 
     <div class="middle-content">
@@ -69,3 +72,28 @@ menu-direction header-height header-shadow" style="padding: 0"
   <!-- Collapsible content -->
 </nav>
 <!--Navbar-->
+
+
+
+
+
+
+<!--<div mdbModal #projctModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">-->
+  <!--<div class="modal-dialog" role="document">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-header">-->
+        <!--<button type="button" class="close pull-right" aria-label="Close" (click)="projctModal.hide()">-->
+          <!--<span aria-hidden="true">×</span>-->
+        <!--</button>-->
+        <!--<h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>-->
+      <!--</div>-->
+      <!--<div class="modal-body">-->
+        <!--...-->
+      <!--</div>-->
+      <!--<div class="modal-footer">-->
+        <!--<button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="projctModal.hide()" mdbWavesEffect>Close</button>-->
+        <!--<button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

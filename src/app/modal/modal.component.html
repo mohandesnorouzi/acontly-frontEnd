@@ -1,0 +1,111 @@
+<!--ADD Project Modal-->
+<div mdbModal #projectModal="mdbModal" class="modal fade top " id="projectModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" style="justify-content: center; max-width: 100%" role="document">
+    <div class="modal-content modal-size modal-lg" style="text-align: center">
+
+      <form [formGroup]="createProjectForm" (ngSubmit)="onCreateProject()">
+
+        <div class="modal-body mx-3">
+
+          <div class="form-group">
+            <label class=" d-rtl" for="input"></label>
+            <input type="text"
+                   id="input"
+                   formControlName="projectName"
+                   placeholder="نام پروژه *"
+                   autoComplete="off">
+            <div *ngFor="let validation of createProjectValidationMessages.projectName">
+            <span *ngIf="createProjectForm.get('projectName').hasError(validation.type) &&
+             createProjectForm.get('projectName').dirty" class="help-block">
+              {{validation.message}}
+            </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class=" d-rtl" for="input1"></label>
+            <input type="text"
+                   id="input1"
+                   formControlName="companyName"
+                   placeholder="نام شرکت کارفرما *"
+                   autoComplete="off">
+            <div *ngFor="let validation of createProjectValidationMessages.companyName">
+            <span *ngIf="createProjectForm.get('companyName').hasError(validation.type) &&
+             createProjectForm.get('companyName').dirty" class="help-block">
+              {{validation.message}}
+            </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="d-rtl" for="input6"></label>
+            <select *ngIf="createProjectForm.get('companyField').invalid ; else validCompanyField"
+                    type="text" class="select-dropDown"
+                    style="color: #c2c2c2"
+                    id="input6"
+                    formControlName="companyField">
+              <option [ngValue]="null" disabled selected style="display: none">
+                حوزه فعالیت شرکت کارفرما *
+              </option>
+              <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry"> {{industry.name}}
+              </option>
+            </select>
+            <ng-template #validCompanyField>
+              <label class="d-rtl" for="input6-1"></label>
+              <select type="text" class="select-dropDown"
+                      id="input6-1"
+                      formControlName="companyField">
+                <option [ngValue]="null" disabled selected style="display: none">
+                  حوزه فعالیت شرکت کارفرما *
+                </option>
+                <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry">
+                  {{industry.name}}
+                </option>
+              </select>
+            </ng-template>
+          </div>
+
+
+          <div class="form-group">
+            <label class="d-rtl" for="input3"></label>
+            <select *ngIf="createProjectForm.get('companySize').invalid ; else validCompanySize"
+                    type="text" class="select-dropDown"
+                    style="color: #c2c2c2"
+                    id="input3"
+                    formControlName="companySize">
+              <option [ngValue]="null" disabled selected style="display: none">
+                تعداد اعضای شرکت کارفرما*
+              </option>
+              <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
+            </select>
+            <ng-template #validCompanySize>
+              <label class="d-rtl" for="input3-1"></label>
+              <select type="text" class="select-dropDown"
+                      id="input3-1"
+                      formControlName="companySize">
+                <option [ngValue]="null" disabled selected style="display: none">
+                  تعداد اعضای شرکت کارفرما*
+                </option>
+                <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
+              </select>
+            </ng-template>
+          </div>
+
+        </div>
+
+        <li class="create-project-btn-position">
+          <button [disabled]="!createProjectForm.valid" type="submit" class="btn create-project-btn">
+            ایجاد پروژه
+          </button>
+        </li>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!--ADD Project Modal-->

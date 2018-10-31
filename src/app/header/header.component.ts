@@ -2,6 +2,7 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {AppGlobals} from '../services/app-globals.service';
+import {ModalComponent} from '../modal/modal.component';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,6 @@ import {AppGlobals} from '../services/app-globals.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
 
   constructor(public router: Router, public authService: AuthService,
               public appGlobal: AppGlobals) {
@@ -22,4 +22,5 @@ export class HeaderComponent implements OnInit {
     this.authService.logOutUser();
     this.router.navigate(['/']);
   }
+
 }
