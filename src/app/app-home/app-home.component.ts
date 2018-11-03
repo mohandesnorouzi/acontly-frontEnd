@@ -9,7 +9,7 @@ import {SidenavService} from '../services/sidenav.service';
 export class AppHomeComponent implements OnInit {
 
   constructor(private sidenav: SidenavService, private renderer: Renderer2) {
-    this.renderer.setStyle(document.body, 'background-color', '#faffff');
+    this.renderer.setStyle(document.body, 'background-color', '#ffffff');
   }
 
   ngOnInit() {

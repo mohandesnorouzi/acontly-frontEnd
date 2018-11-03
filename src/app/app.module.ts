@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {Injectable, NgModule, NO_ERRORS_SCHEMA, Renderer2, RendererFactory2} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {AppComponent} from './app.component';
@@ -41,7 +41,7 @@ import {CompanySizeService} from './services/company-size.service';
 import {IndustryService} from './services/industry.service';
 import {CompanyRoleService} from './services/company-role.service';
 import {ModalComponent} from './modal/modal.component';
-
+import {MyRendererService} from './services/renderer.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,8 @@ import {ModalComponent} from './modal/modal.component';
     AngularFontAwesomeModule
   ],
   providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
-    CompanySizeService, IndustryService, CompanyRoleService, ModalComponent,
+    CompanySizeService, IndustryService, CompanyRoleService, ModalComponent, InstagramComponent, SidenavComponent,
+    ContentComponent, MyRendererService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

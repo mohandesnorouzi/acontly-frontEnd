@@ -15,6 +15,7 @@
   height: 100%;
   overflow-y: auto;
   direction: ltr;
+  z-index: 1;
 }
 
 // This css make this section show perfect scroll
@@ -67,6 +68,8 @@
   height: 100%;
   overflow-y: auto;
   direction: ltr;
+  transition: 0.5s;
+  z-index: 1;
 }
 
 // This css make this section show perfect scroll
@@ -118,6 +121,10 @@
   height: 700px;
   overflow: hidden;
   position: fixed;
+  //transition-duration: 2s;
+  //animation-direction: reverse;
+  //transition: 0.5s;
+  //transition: left 2s linear;
 }
 
 .sideNavBar-txt {
@@ -202,4 +209,14 @@
   background-color: #4b1472;
   height: 44px;
   outline: none;
+}
+
+
+.main-rectangular {
+  width: 76%;
+  height: 549px;
+  border-radius: 5px;
+  box-shadow: 0 0 25px #c1c1c1;
+  margin-left: 16%;
+  margin-top: 100px;
 }

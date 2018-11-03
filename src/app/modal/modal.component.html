@@ -1,10 +1,12 @@
 <!--ADD Project Modal-->
-<div mdbModal #projectModal="mdbModal" class="modal fade top " id="projectModal" tabindex="-1" role="dialog"
+<div mdbModal #projectModal="mdbModal" class="modal fade top" id="projectModal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel"
      aria-hidden="true">
 
-  <div class="modal-dialog modal-dialog-centered" style="justify-content: center; max-width: 100%" role="document">
-    <div class="modal-content modal-size modal-lg" style="text-align: center">
+  <div class="modal-dialog modal-dialog-centered" style="justify-content: center; max-width: 100%"
+       role="document">
+    <div class="modal-content modal-size modal-lg"
+         style="text-align: center">
 
       <form [formGroup]="createProjectForm" (ngSubmit)="onCreateProject()">
 
@@ -50,7 +52,8 @@
               <option [ngValue]="null" disabled selected style="display: none">
                 حوزه فعالیت شرکت کارفرما *
               </option>
-              <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry"> {{industry.name}}
+              <option class="option-style" *ngFor="let industry of allIndustry" [ngValue]="industry">
+                {{industry.name}}
               </option>
             </select>
             <ng-template #validCompanyField>
@@ -89,7 +92,8 @@
                 <option [ngValue]="null" disabled selected style="display: none">
                   تعداد اعضای شرکت کارفرما*
                 </option>
-                <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}</option>
+                <option class="option-style" *ngFor="let CS of csize" [ngValue]="CS"> {{CS.min}} الی {{CS.max}}
+                </option>
               </select>
             </ng-template>
           </div>
@@ -108,4 +112,5 @@
   </div>
 
 </div>
+
 <!--ADD Project Modal-->

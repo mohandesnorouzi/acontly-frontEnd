@@ -40,15 +40,20 @@
 </nav>
 <!--Navbar-->
 
+<!--First must call projectModal from modal.component and it is so important put this line outside of header
+because in header i use z-index =1 and it made modal go under modal-background so this line can not be in
+navBar tag and must place somewhere out-->
+<app-modal #projectModal></app-modal>
+
 <!--Navbar-->
 <nav class="navbar navbar-expand bg-custom-gray
-menu-direction header-height header-shadow" style="padding: 0"
+menu-direction header-height header-shadow" style="padding: 0; position: fixed; width: 100%; z-index: 1"
      *ngIf="appGlobal.isAuthenticated">
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" style="width: 100%">
-    <!--First must call projectModal from modal.component-->
-    <app-modal #projectModal></app-modal>
+
+
     <div style="text-align: center">
       <a class="social-account-profile icon-plus"
          (click)="projectModal.openModal()"
@@ -74,26 +79,22 @@ menu-direction header-height header-shadow" style="padding: 0"
 <!--Navbar-->
 
 
-
-
-
-
 <!--<div mdbModal #projctModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">-->
-  <!--<div class="modal-dialog" role="document">-->
-    <!--<div class="modal-content">-->
-      <!--<div class="modal-header">-->
-        <!--<button type="button" class="close pull-right" aria-label="Close" (click)="projctModal.hide()">-->
-          <!--<span aria-hidden="true">×</span>-->
-        <!--</button>-->
-        <!--<h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>-->
-      <!--</div>-->
-      <!--<div class="modal-body">-->
-        <!--...-->
-      <!--</div>-->
-      <!--<div class="modal-footer">-->
-        <!--<button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="projctModal.hide()" mdbWavesEffect>Close</button>-->
-        <!--<button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div class="modal-dialog" role="document">-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header">-->
+<!--<button type="button" class="close pull-right" aria-label="Close" (click)="projctModal.hide()">-->
+<!--<span aria-hidden="true">×</span>-->
+<!--</button>-->
+<!--<h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>-->
+<!--</div>-->
+<!--<div class="modal-body">-->
+<!--...-->
+<!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="projctModal.hide()" mdbWavesEffect>Close</button>-->
+<!--<button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->

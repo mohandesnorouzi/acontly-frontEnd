@@ -1,3 +1,63 @@
-<p>
-  instagram works!
-</p>
+<div class="content-container d-rtl">
+
+  <div class="main-rectangular d-rtl" id="boxPosition">
+
+
+    <form [formGroup]="createPostForm">  <!--// syncing form with my html in this line-->
+      <div class="file-txt-div">
+
+        <div class="file-rectangular">
+        </div>
+
+        <div class="form-group" style="text-align: right;width: 100%;position: relative">
+          <textarea type="text" style="margin-bottom: 25px"
+                    id="textAreaScroll"
+                    formControlName="text"
+                    placeholder="متن ...">
+          </textarea>
+          <span class="icon-user"></span>
+
+
+          <div>
+            <span style="font-size: 14px;color: black;font-weight: 500">خاموش کردن کامنت گذاری</span>
+            <label class="switch" style="right: 10px;top: 5px;margin-bottom: 0">
+              <input type="checkbox"
+                     formControlName="SwitchToggle"
+                     (click)="SwitchStatus()">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+
+          <textarea style="margin-top: 10px;margin-bottom: 13px" type="text"
+                    id="commentAreaScroll"
+                    formControlName="comment"
+                    placeholder="کامنت اول ...">
+          </textarea>
+          <span class="icon-user1"></span>
+
+          <div style="width: 101%;text-align: left">
+            <button type="button" class="btn draft-btn">
+              ذخیره
+            </button>
+            <button type="button" class="btn publishNow-btn">
+              الان
+            </button>
+            <button type="button" class="btn schedule-btn">
+              بعدا
+            </button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+</div>
+

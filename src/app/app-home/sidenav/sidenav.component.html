@@ -1,5 +1,11 @@
 <div class="d-rtl">
+  <!--<app-instagram #instagram></app-instagram>-->
+  <!--<app-instagram #boxPosition></app-instagram>-->
+  <!--<div class="main-rectangular">-->
 
+  <!--<p>thi is test</p>-->
+  <!--</div>-->
+  <!--<app-instagram #boxPosition></app-instagram>-->
   <div class="narrowSideNavBar" id="closeSideNav" style="text-align: right;">
 
     <div class="narrowSideNavBar-scroll">
@@ -15,50 +21,53 @@
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
+           (click)="overviewSideNav()"
            routerLinkActive="active" routerLink="./analysis-overview"></a>
       </li>
 
       <hr class="hr-style" style="margin-bottom: -16px; margin-top: 13px">
 
+
       <li class="li-margin-icon">
         <a class="icon-calendar"
+           (click)="subSideNav('content-production')"
            routerLinkActive="active" routerLink="./content/production"
+           ></a>
+      </li>
+
+      <li class="li-margin-icon">
+        <a class="icon-calendar"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
-           (click)="subSideNav('content-production')"></a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
@@ -82,47 +91,48 @@
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
+           (click)="overviewSideNav()"
            routerLinkActive="active" routerLink="./analysis-overview">
           آمار و ارقام</a>
       </li>
 
-      <hr class="hr-style" style="margin-bottom: -16px; margin-top: 13px" >
+      <hr class="hr-style" style="margin-bottom: -16px; margin-top: 13px">
 
       <li class="li-margin-icon" style="margin-top: 5px" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content/production"
-           (click)="subSideNav('content-production')">
+           (click)="subSideNav('content-production')"
+           routerLinkActive="active" routerLink="./content/production">
           محتوا</a>
       </li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">تقویم</a></li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">اعضای تیم</a></li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">اعلان ها</a></li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">آنالیز</a></li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">مدیریت مخاطبان</a></li>
 
       <li class="li-margin-icon" style="direction: rtl">
         <a class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-production"
+           routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">پروژه ها</a></li>
 
     </div>
@@ -132,7 +142,7 @@
 
   <div class="subtitle-sideNavBar" id="subTitleSideNav" style="text-align: right">
 
-    <div *ngIf="titleID == 'content-production'" style="padding-top: 68px" >
+    <div *ngIf="titleID === 'content-production'" style="padding-top: 68px">
 
       <li class="">
         <p class="sideNavBarSubtitle-txt" style="cursor: pointer"

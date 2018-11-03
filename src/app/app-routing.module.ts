@@ -15,6 +15,7 @@ import {OverviewComponent} from './app-home/overview/overview.component';
 import {ContentComponent} from './app-home/content/content.component';
 import {AllContentComponent} from './app-home/content/all-content/all-content.component';
 import {ContentProductionComponent} from './app-home/content/content-production/content-production.component';
+import {InstagramComponent} from './app-home/content/instagram/instagram.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeBlComponent, canActivate: [LoggedInUserGuard]},
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     path: 'overview', canActivate: [AuthGuard], component: AppHomeComponent, children: [
       {path: 'content-overview', component: OverviewContentComponent},
       {path: 'analysis-overview', component: OverviewAnalysisComponent},
+      {path: 'content', redirectTo: 'content/production'},
       {path: 'content/production', component: ContentProductionComponent},
       {path: 'content/all', component: AllContentComponent},
     ]
