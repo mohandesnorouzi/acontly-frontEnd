@@ -22,20 +22,23 @@ export class InstagramComponent implements OnInit {
 
   constructor(public appGlobal: AppGlobals) {
     this.mySwitch = false;
-
-    this.onResize();
-
   }
 
+
   @HostListener('window:resize', ['$event'])
-  onResize(event?) {
+  onResize() {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
-    if (this.appGlobal.checksubTitleSideNav) {
+
+    if (this.appGlobal.checksubTitleSideNav || this.appGlobal.checkMainSideNav) {
       if (this.innerWidth > 1200) {
         document.getElementById('boxPosition').style.marginRight = '17%';
+      } else if (this.innerWidth < 1200) {
+        document.getElementById('boxPosition').style.marginRight = '204px';
       }
+    } else if (!this.appGlobal.checksubTitleSideNav || !this.appGlobal.checkMainSideNav) {
+      document.getElementById('boxPosition').style.marginRight = '104px';
     }
+
   }
 
 
@@ -53,21 +56,18 @@ export class InstagramComponent implements OnInit {
       'SwitchToggle': new FormControl(null, Validators.required)
     });
 
-
+    this.innerWidth = window.innerWidth;
     if (this.appGlobal.checksubTitleSideNav) {
       // document.getElementById('boxPosition').style.marginRight = '248px';
       if (this.innerWidth > 1200) {
         document.getElementById('boxPosition').style.marginRight = '17%';
+      } else if (this.innerWidth < 1200) {
+        document.getElementById('boxPosition').style.marginRight = '204px';
+        console.log('i am here');
       }
-
-      if (this.innerWidth < 1200) {
-        console.log('hi');
-        document.getElementById('boxPosition').style.marginRight = '20%';
-      }
-
     } else {
       // document.getElementById('boxPosition').style.marginRight = '108px';
-      document.getElementById('boxPosition').style.marginRight = '8%';
+      document.getElementById('boxPosition').style.marginRight = '104px';
     }
   }
 

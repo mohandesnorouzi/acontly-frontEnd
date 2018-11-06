@@ -44,6 +44,7 @@ export class SidenavComponent implements OnInit {
   // Manage opening and closing of main part of sideNav
   Open() {
 
+    this.appGlobal.checkMainSideNav = true;
     document.getElementById('openSideNav').style.width = '180px';
     document.getElementById('closeSideNav').style.width = '0';
     document.getElementById('subTitleSideNav').style.width = '0';
@@ -51,13 +52,15 @@ export class SidenavComponent implements OnInit {
     const boxProperty = document.getElementById('boxPosition');
     if (boxProperty !== null) {
       // document.getElementById('boxPosition').style.marginRight = '248px';
-      document.getElementById('boxPosition').style.marginRight = '17%';
+      document.getElementById('boxPosition').style.marginRight = '204px';
     }
 
   }
 
   Close() {
 
+    this.appGlobal.checkMainSideNav = false;
+    this.appGlobal.checksubTitleSideNav = false;
     document.getElementById('openSideNav').style.width = '0';
     document.getElementById('subTitleSideNav').style.width = '0';
     document.getElementById('closeSideNav').style.width = '60px';
@@ -65,7 +68,7 @@ export class SidenavComponent implements OnInit {
     const boxProperty = document.getElementById('boxPosition');
     if (boxProperty !== null) {
       // document.getElementById('boxPosition').style.marginRight = '108px';
-      document.getElementById('boxPosition').style.marginRight = '8%';
+      document.getElementById('boxPosition').style.marginRight = '104px';
     }
   }
 
@@ -77,6 +80,7 @@ export class SidenavComponent implements OnInit {
     if (navWidth !== '0px') {
       document.getElementById('subTitleSideNav').style.width = '0';
     }
+    // this.Open();
   }
 
   subSideNav(id) {
@@ -97,7 +101,7 @@ export class SidenavComponent implements OnInit {
 
       if (boxProperty !== null) {
         // document.getElementById('boxPosition').style.marginRight = '248px';
-        document.getElementById('boxPosition').style.marginRight = '17%';
+        document.getElementById('boxPosition').style.marginRight = '204px';
       }
 
     } else {
@@ -107,7 +111,7 @@ export class SidenavComponent implements OnInit {
 
       if (boxProperty !== null && openNavWidth === '0px') {
         // document.getElementById('boxPosition').style.marginRight = '108px';
-        document.getElementById('boxPosition').style.marginRight = '8%';
+        document.getElementById('boxPosition').style.marginRight = '104px';
       }
     }
   }
