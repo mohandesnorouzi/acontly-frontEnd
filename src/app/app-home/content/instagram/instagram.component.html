@@ -29,12 +29,27 @@
           </div>
 
 
-          <textarea style="margin-top: 10px;margin-bottom: 13px" type="text"
+          <textarea *ngIf="!mySwitch;else switch"
+                    style="margin-top: 10px;margin-bottom: 13px" type="text"
                     id="commentAreaScroll"
                     formControlName="comment"
                     placeholder="کامنت اول ...">
           </textarea>
-          <span class="icon-user1"></span>
+          <ng-template #switch>
+            <textarea readonly
+                      style="margin-top: 10px;margin-bottom: 13px" type="text"
+                      id="commentAreaOffScroll"
+                      [value]="searchValue"
+                      formControlName="comment"
+                      placeholder="کامنت اول ...">
+            </textarea>
+          </ng-template>
+
+          <span *ngIf="!mySwitch;else switchIcon" class="icon-user1"></span>
+          <ng-template #switchIcon>
+            <span class="icon-user1-off"></span>
+          </ng-template>
+
 
           <div style="width: 101%;text-align: left">
             <button type="button" class="btn draft-btn">

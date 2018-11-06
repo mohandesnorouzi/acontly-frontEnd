@@ -45,6 +45,7 @@
   -webkit-box-shadow: 0px 4px 19px 0px #c2c2c2; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow: 0px 4px 19px 0px #c2c2c2; /* Firefox 3.5 - 3.6 */
   box-shadow: 0px 4px 19px 0px #c2c2c2; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  background-image: linear-gradient(to left, #6C299B 0,#6C299B 35%, #00337b 100%);
 }
 
 //box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
@@ -67,9 +68,9 @@
   position: relative;
   height: 37px;
   width: 37px;
-  background-color: white;
+  //background-color: white;
   border-radius: 50%;
-  border: 1px solid #6c299b;
+  border: 2px solid #c2c2c2;
   margin-right: 20px;
   display: block;
   padding-top: 4px;
@@ -80,11 +81,25 @@
   position: relative;
   height: 37px;
   width: 37px;
+  //background-color: white;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  padding-top: 4px;
+}
+
+/* Create a custom circle */
+.social-active {
+  position: relative;
+  height: 37px;
+  width: 37px;
   background-color: white;
   border-radius: 50%;
-  border: 1px solid #c2c2c2;
-  margin-left: 10px;
-  margin-right: 0;
+  border: 2px solid white;
+  margin-left: 5px;
+  margin-right: 5px;
   display: inline-block;
   padding-top: 4px;
 }
@@ -94,9 +109,9 @@
   position: relative;
   height: 37px;
   width: 37px;
-  background-color: white;
+  //background-color: white;
   border-radius: 50%;
-  border: 1px solid #6c299b;
+  border: 2px solid #c2c2c2;
   margin-right: 0;
   margin-left: 20px;
   display: block;
@@ -109,9 +124,22 @@
   text-align: center;
 }
 
+//[data-icon]:before {
+//  content: attr(data-icon);
+//  font-family: "untitled-font-1" !important;
+//  font-style: normal !important;
+//  font-weight: normal !important;
+//  font-variant: normal !important;
+//  text-transform: none !important;
+//  speak: none;
+//  line-height: 1;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
+
 [data-icon]:before {
+  font-family: "test" !important;
   content: attr(data-icon);
-  font-family: "untitled-font-1" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -123,8 +151,8 @@
 }
 
 .icon-user:before {
-  content: "\63";
-  color: #6c299b !important;
+  content: "\31";
+  color: #c2c2c2 !important;
   font-size: 20px;
   margin-left: 20px;
   position: relative;
@@ -134,60 +162,109 @@
 }
 
 .icon-plus:before {
-  content: "\66";
+  content: "\48";
   color: #c2c2c2 !important;
   font-size: 16px;
   margin-left: 20px;
   position: relative;
-  top: 6px;
-  right: 9px;
+  top: 5px;
+  right: 8px;
   font-weight: bold !important;
 }
 
-.icon-twitter:before {
-  content: "\64";
+.icon-instagram:before {
+  content: "\78";
   color: #c2c2c2 !important;
   font-size: 16px;
   margin-left: 20px;
   position: relative;
-  top: 6px;
+  top: 5px;
   right: 8px;
 }
 
+.icon-instagram-active:before {
+  content: "\78";
+  color: #b913bd !important;
+  font-size: 16px;
+  margin-left: 20px;
+  position: relative;
+  top: 5px;
+  right: 8px;
+}
+
+
 .icon-telegram:before {
-  content: "\65";
+  content: "\56";
   color: #c2c2c2 !important;
   font-size: 16px;
   margin-left: 20px;
   position: relative;
-  top: 6px;
-  right: 10px;
+  top: 5px;
+  right: 9px;
+}
+
+.icon-telegram-active:before {
+  content: "\56";
+  color: #19b4ff !important;
+  font-size: 16px;
+  margin-left: 20px;
+  position: relative;
+  top: 5px;
+  right: 9px;
 }
 
 .icon-linkedin:before {
-  content: "\67";
+  content: "\42";
   color: #c2c2c2 !important;
   font-size: 16px;
   margin-left: 20px;
   position: relative;
   top: 4px;
-  right: 9px;
+  right: 8px;
 }
 
-.icon-instagram:before {
-  content: "\68";
+.icon-linkedin-active:before {
+  content: "\42";
+  color: #004a73 !important;
+  font-size: 16px;
+  margin-left: 20px;
+  position: relative;
+  top: 4px;
+  right: 8px;
+}
+
+
+.icon-twitter:before {
+  content: "\59";
   color: #c2c2c2 !important;
   font-size: 16px;
   margin-left: 20px;
   position: relative;
-  top: 6px;
-  right: 9px;
+  top: 5px;
+  right: 8px;
 }
+
+.icon-twitter-active:before {
+  content: "\59";
+  color: #95d8fe !important;
+  font-size: 16px;
+  margin-left: 20px;
+  position: relative;
+  top: 5px;
+  right: 8px;
+}
+
+
+
+
+
+
 
 
 .modal-notify .modal-header {
   border-radius: 3px 3px 0 0;
 }
+
 .modal-notify .modal-content {
   border-radius: 3px;
 }

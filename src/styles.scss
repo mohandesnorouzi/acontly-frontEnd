@@ -57,3 +57,12 @@ body {
 
 //html, body { height: 100%; }
 //body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+// These two css made modal-backdrop background color change in any page of my code
+.modal-backdrop {
+  background-color: black !important;
+}
+
+.modal-backdrop.in {
+  opacity: 0.7 !important;
+}

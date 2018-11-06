@@ -9,14 +9,20 @@
 }
 
 .main-rectangular {
-  width: 74.87%;
+  //width: 74.87%;
+  width: 75%;
   height: 529px;
   border-radius: 5px;
-  box-shadow: 0 0 25px #c1c1c1;
-  margin-right: 100px;
+  box-shadow: 0 2px 10px #c1c1c1;
+  //border: 1px solid #00337b;
+  //margin-right: 128px;
+  margin-right: 17%;
+  //margin-left: 3%;
+  margin-left: 3%;
   //margin-left: 9%;
   margin-top: 180px;
   transition: 0.5s;
+  background-color: white;
 }
 
 .file-txt-div {
@@ -102,7 +108,7 @@ textarea {
 }
 
 textarea:focus {
-  border: 1px solid #6c299b;
+  border: 1px solid #55d6be;
 }
 
 [data-icon]:before {
@@ -145,7 +151,7 @@ textarea:focus {
 // Scroll settings
 #textAreaScroll::-webkit-scrollbar-thumb {
   //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-  background-color: #4b1472;
+  background-color: #5ba7b4;
   border-radius: 5px;
 
 }
@@ -169,12 +175,22 @@ textarea:focus {
 }
 
 #commentAreaScroll:focus {
-  border: 1px solid #6c299b;
+  border: 1px solid #55d6be;
 }
 
 .icon-user1:before {
   content: "\63";
   color: #6c299b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: absolute;
+  top: 293px;
+  left: -1%;
+}
+
+.icon-user1-off:before {
+  content: "\63";
+  color: #dddddd !important;
   font-size: 20px;
   margin-left: 20px;
   position: absolute;
@@ -189,7 +205,7 @@ textarea:focus {
 
 // Scroll settings
 #commentAreaScroll::-webkit-scrollbar-thumb {
-  background-color: #4b1472;
+  background-color: #5ba7b4;
   border-radius: 5px;
 }
 
@@ -465,3 +481,37 @@ input:checked + .slider:before {
   box-shadow: none;
 }
 
+#commentAreaOffScroll {
+  height: 84px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  background-color: white;
+  direction: rtl;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: black;
+  outline: none;
+  //box-sizing: border-box;
+  resize: none;
+  overflow-y: hidden;
+}
+
+//#commentAreaOffScroll:focus {
+//  border: 1px solid #dddddd;
+//}
+
+#commentAreaOffScroll::placeholder {
+  color: #dddddd;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-rectangular {
+    width: 80%;
+    margin-right: 20%;
+    margin-left: 3%;
+  }
+}

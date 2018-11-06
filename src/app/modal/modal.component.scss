@@ -96,4 +96,198 @@ select:focus {
   width: auto;
   display: inline-block;
   border: none;
+  box-shadow: none;
+}
+
+// ADD social Modal
+.addSocialModal-size {
+  height: 257px;
+  width: 657px;
+}
+
+/* Create a custom circle */
+.socialProject {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #c2c2c2;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: inline-block;
+  padding-top: 4px;
+  box-shadow: 0 2px 6px 0 #c2c2c2;
+}
+
+[data-icon]:before {
+  content: attr(data-icon);
+  font-family: "untitled-font-1" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-instagram:before {
+  content: "\68";
+  color: #b913bd !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
+  //font-weight: 500;
+}
+
+.icon-telegram:before {
+  content: "\65";
+  color: #19b4ff !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 11px;
+  right: 10px;
+  //font-weight: 500;
+}
+
+.icon-linkedin:before {
+  content: "\67";
+  color: #004a73 !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
+  //font-weight: 500;
+}
+
+.icon-twitter:before {
+  content: "\64";
+  color: #95d8fe !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
+  //font-weight: 500;
+}
+
+.cancel-btn {
+  background-color: white;
+  color: #6c299b;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  border: 1px solid #6c299b;
+  box-shadow: none;
+}
+
+/* Create a custom circle */
+.activeInstagram {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: #b913bd;
+  border-radius: 50%;
+  border: 1px solid #b913bd;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: inline-block;
+  padding-top: 4px;
+  box-shadow: 0 2px 6px 0 #c2c2c2;
+}
+
+/* Create a custom circle */
+.activeTelegram {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: #19b4ff;
+  border-radius: 50%;
+  border: 1px solid #19b4ff;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: inline-block;
+  padding-top: 4px;
+  box-shadow: 0 2px 6px 0 #c2c2c2;
+}
+
+/* Create a custom circle */
+.activeLinkedin {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: #004a73;
+  border-radius: 50%;
+  border: 1px solid #004a73;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: inline-block;
+  padding-top: 4px;
+  box-shadow: 0 2px 6px 0 #c2c2c2;
+}
+
+/* Create a custom circle */
+.activeTwitter {
+  position: relative;
+  height: 52px;
+  width: 52px;
+  background-color: #95d8fe;
+  border-radius: 50%;
+  border: 1px solid #95d8fe;
+  margin-left: 18px;
+  margin-right: 18px;
+  display: inline-block;
+  padding-top: 4px;
+  box-shadow: 0 2px 6px 0 #c2c2c2;
+}
+
+.icon-instagram-active:before {
+  content: "\68";
+  color: white !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
+}
+
+.icon-telegram-active:before {
+  content: "\65";
+  color: white !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 11px;
+  right: 10px;
+}
+
+.icon-linkedin-active:before {
+  content: "\67";
+  color: white !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
+}
+
+.icon-twitter-active:before {
+  content: "\64";
+  color: white !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 10px;
+  right: 9px;
 }

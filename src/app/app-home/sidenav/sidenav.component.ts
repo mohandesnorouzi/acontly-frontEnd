@@ -44,13 +44,14 @@ export class SidenavComponent implements OnInit {
   // Manage opening and closing of main part of sideNav
   Open() {
 
-    document.getElementById('openSideNav').style.width = '200px';
+    document.getElementById('openSideNav').style.width = '180px';
     document.getElementById('closeSideNav').style.width = '0';
     document.getElementById('subTitleSideNav').style.width = '0';
 
     const boxProperty = document.getElementById('boxPosition');
     if (boxProperty !== null) {
-      document.getElementById('boxPosition').style.marginRight = '240px';
+      // document.getElementById('boxPosition').style.marginRight = '248px';
+      document.getElementById('boxPosition').style.marginRight = '17%';
     }
 
   }
@@ -63,7 +64,8 @@ export class SidenavComponent implements OnInit {
 
     const boxProperty = document.getElementById('boxPosition');
     if (boxProperty !== null) {
-      document.getElementById('boxPosition').style.marginRight = '100px';
+      // document.getElementById('boxPosition').style.marginRight = '108px';
+      document.getElementById('boxPosition').style.marginRight = '8%';
     }
   }
 
@@ -89,12 +91,13 @@ export class SidenavComponent implements OnInit {
     if (navWidth === '0px') {
       // Open
       this.appGlobal.checksubTitleSideNav = true;
-      document.getElementById('subTitleSideNav').style.width = '140px';
+      document.getElementById('subTitleSideNav').style.width = '120px';
       this.titleID = id;
 
 
       if (boxProperty !== null) {
-        document.getElementById('boxPosition').style.marginRight = '240px';
+        // document.getElementById('boxPosition').style.marginRight = '248px';
+        document.getElementById('boxPosition').style.marginRight = '17%';
       }
 
     } else {
@@ -103,7 +106,8 @@ export class SidenavComponent implements OnInit {
       document.getElementById('subTitleSideNav').style.width = '0';
 
       if (boxProperty !== null && openNavWidth === '0px') {
-        document.getElementById('boxPosition').style.marginRight = '100px';
+        // document.getElementById('boxPosition').style.marginRight = '108px';
+        document.getElementById('boxPosition').style.marginRight = '8%';
       }
     }
   }

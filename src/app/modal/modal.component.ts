@@ -1,9 +1,10 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormValidation} from '../services/form-validation.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {CompanySizeService} from '../services/company-size.service';
 import {IndustryService} from '../services/industry.service';
+import {$} from 'protractor';
 
 @Component({
   selector: 'app-modal',
@@ -14,7 +15,8 @@ export class ModalComponent implements OnInit {
 
   csize: Array<any>;
   allIndustry: Array<any>;
-
+  social: string;
+  submitSocialActive: boolean;
 
   createProjectForm: FormGroup;
   @Input() public createProjectValidationMessages = {
@@ -28,13 +30,15 @@ export class ModalComponent implements OnInit {
 
 
   constructor(private formvalidation: FormValidation, private companysize: CompanySizeService,
-              private industry: IndustryService) {
+              private industry: IndustryService, private renderer: Renderer2) {
   }
 
 
   @ViewChild('projectModal') public projectModal;
+  @ViewChild('addSocialModal') public addSocialModal;
+  @ViewChild('instagramm') public instagramm: ElementRef;
 
-  openModal() {
+  openAddProjectModal() {
     // console.log(this.projectModal);
     this.projectModal.show();
 
@@ -61,7 +65,6 @@ export class ModalComponent implements OnInit {
 
   onCreateProject() {
     // Create Project form setup
-    // console.log(this.createProjectForm);
     const projectName = this.createProjectForm.value.projectName;
     const companyName = this.createProjectForm.value.companyName;
     const companyField = this.createProjectForm.value.companyField;
@@ -74,6 +77,30 @@ export class ModalComponent implements OnInit {
     //   'email': '',
     //   'password': ''
     // });
+  }
+
+
+  openAddSocialModal() {
+    this.addSocialModal.show();
+    this.submitSocialActive = false;
+    this.social = '';
+
+  }
+
+  closeAddSocialModal() {
+    this.addSocialModal.hide();
+    this.submitSocialActive = false;
+    this.social = '';
+  }
+
+  onClickSocial(value) {
+    this.social = value;
+    this.submitSocialActive = true;
+  }
+
+
+  onAddSocial() {
+    console.log(this.social);
   }
 
 

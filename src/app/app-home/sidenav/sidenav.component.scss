@@ -7,7 +7,9 @@
   //background:linear-gradient(to bottom, #c4d7e6 0, #c4d7e6 33%, #66a5ad 33%, #66a5ad 66%, #ff0000 66%, #ff0000 100%);
   //background-image: linear-gradient(to bottom, #6c299b 0,#6c299b 70% ,#5ba7b4 80%, #55d6be 100%);
   //background-image: linear-gradient(to bottom, #6c299b 0, #5ba7b4 95%, #55d6be 100%);
-  background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
+
+  //background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
+  background-color: white;
   background-repeat: no-repeat;
   position: fixed;
   top: 70px;
@@ -16,6 +18,8 @@
   overflow-y: auto;
   direction: ltr;
   z-index: 1;
+  //box-shadow: -5px 0px 15px 0px #d8d8d8;
+  box-shadow: -5px 10px 15px #d8d8d8;
 }
 
 // This css make this section show perfect scroll
@@ -51,7 +55,7 @@
 // Modify icon position
 .li-margin-icon {
   margin-top: 30px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 // Set style for main section of sideNavBar
@@ -60,7 +64,8 @@
   margin: 0;
   padding: 0;
   width: 0;
-  background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
+  //background-image: linear-gradient(to bottom, #6C299B 0, #6080AD 100%);
+  background-color: white;
   background-repeat: no-repeat;
   position: fixed;
   top: 70px;
@@ -70,6 +75,7 @@
   direction: ltr;
   transition: 0.5s;
   z-index: 1;
+  box-shadow: -5px 10px 15px #d8d8d8;
 }
 
 // This css make this section show perfect scroll
@@ -114,13 +120,14 @@
   margin-right: 60px;
   padding: 0;
   width: 0px;
-  background-color: #391D4D;
+  background-color: #4c1473;
   top: 70px;
   bottom: 0px;
   z-index: 1;
   height: 700px;
   overflow: hidden;
   position: fixed;
+  box-shadow: -5px 10px 15px #d8d8d8;
   //transition-duration: 2s;
   //animation-direction: reverse;
   //transition: 0.5s;
@@ -129,20 +136,27 @@
 
 .sideNavBar-txt {
   font-size: 15px;
-  color: #c2c2c2;
+  //color: #c2c2c2;
+  color: #6b289b;
   line-height: 24px;
+  font-weight: 500;
+  outline: none;
 }
 
 .sideNavBar-txt:hover {
-  color: #55ecda;
+  //color: #55ecda;
+  color: #55D6BE;
+  //color: #0c5b88;
 }
 
 .sideNavBar-txt:focus {
   color: #55ecda;
+  //color: #0c5b88;
+
 }
 
 .hr-style {
-  border: 1px solid #c2c2c2;
+  border: 1px solid #5ba7b4;
 }
 
 [data-icon]:before {
@@ -158,9 +172,43 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-menu:before {
+  content: "\44";
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  top: 6px;
+}
+
+.icon-menu:hover:before {
+  color: #55D6BE !important;
+}
+
+.icon-menu:focus:before {
+  color: #55D6BE !important;
+}
+
+.icon-content:before {
+  content: "\6b";
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-content:hover:before {
+  color: #55D6BE !important;
+}
+
+.icon-content:focus:before {
+  color: #55D6BE !important;
+}
+
 .icon-calendar:before {
-  content: "\61";
-  color: #c2c2c2 !important;
+  content: "\68";
+  color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
   position: relative;
@@ -168,25 +216,79 @@
 }
 
 .icon-calendar:hover:before {
-  color: #55ecda !important;
+  color: #55D6BE !important;
 }
 
 .icon-calendar:focus:before {
-  color: #55ecda !important;
+  color: #55D6BE !important;
 }
 
-.icon-menu:before {
-  content: "\62";
-  color: #c2c2c2 !important;
+.icon-team-member:before {
+  content: "\54";
+  color: #6b289b !important;
   font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
 }
 
-.icon-menu:hover:before {
-  color: #55ecda !important;
+.icon-team-member:hover:before {
+  color: #55D6BE !important;
 }
 
-.icon-menu:focus:before {
-  color: #55ecda !important;
+.icon-team-member:focus:before {
+  color: #55D6BE !important;
+}
+
+.icon-notification:before {
+  content: "\47";
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-notification:hover:before {
+  color: #55D6BE !important;
+}
+
+.icon-notification:focus:before {
+  color: #55D6BE !important;
+}
+
+.icon-analyze:before {
+  content: "\66";
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-analyze:hover:before {
+  color: #55D6BE !important;
+}
+
+.icon-analyze:focus:before {
+  color: #55D6BE !important;
+}
+
+.icon-project:before {
+  content: "\4b";
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-project:hover:before {
+  color: #55D6BE !important;
+}
+
+.icon-project:focus:before {
+  color: #55D6BE !important;
 }
 
 .sideNavBarSubtitle-txt {
@@ -200,13 +302,13 @@
 }
 
 .sideNavBarSubtitle-txt:hover {
-  background-color: #4b1472;
+  background-color: #391d4d;
   height: 44px;
 }
 
 .sideNavBarSubtitle-txt:focus {
   color: #55ecda;
-  background-color: #4b1472;
+  //background-color: #391d4d;
   height: 44px;
   outline: none;
 }
