@@ -42,6 +42,7 @@ import {IndustryService} from './services/industry.service';
 import {CompanyRoleService} from './services/company-role.service';
 import {ModalComponent} from './modal/modal.component';
 import {MyRendererService} from './services/renderer.service';
+import { CalendarComponent } from './app-home/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {MyRendererService} from './services/renderer.service';
     ContentProductionComponent,
     AllContentComponent,
     InstagramComponent,
-    ModalComponent
+    ModalComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

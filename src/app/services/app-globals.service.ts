@@ -6,4 +6,5 @@ export class AppGlobals {
   isAuthenticated: boolean;
   checksubTitleSideNav: boolean; // True means not null and false means null
   checkMainSideNav: boolean; // True means not null and false means null
+  currentURL: string;
 }

@@ -145,12 +145,12 @@
 
 .sideNavBar-txt:hover {
   //color: #55ecda;
-  color: #55D6BE;
+  color: #56ecdb;
   //color: #0c5b88;
 }
 
 .sideNavBar-txt:focus {
-  color: #55ecda;
+  color: #56ecdb;
   //color: #0c5b88;
 
 }
@@ -172,7 +172,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .icon-menu:before {
   content: "\44";
   color: #6b289b !important;
@@ -182,11 +181,11 @@
 }
 
 .icon-menu:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-menu:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-content:before {
@@ -199,11 +198,11 @@
 }
 
 .icon-content:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-content:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-calendar:before {
@@ -216,11 +215,11 @@
 }
 
 .icon-calendar:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-calendar:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-team-member:before {
@@ -233,11 +232,11 @@
 }
 
 .icon-team-member:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-team-member:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-notification:before {
@@ -250,11 +249,11 @@
 }
 
 .icon-notification:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-notification:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-analyze:before {
@@ -267,11 +266,11 @@
 }
 
 .icon-analyze:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-analyze:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-project:before {
@@ -284,11 +283,11 @@
 }
 
 .icon-project:hover:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .icon-project:focus:before {
-  color: #55D6BE !important;
+  color: #56ecdb !important;
 }
 
 .sideNavBarSubtitle-txt {
@@ -299,6 +298,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
+  font-weight: 400;
 }
 
 .sideNavBarSubtitle-txt:hover {
@@ -307,12 +307,17 @@
 }
 
 .sideNavBarSubtitle-txt:focus {
-  color: #55ecda;
-  //background-color: #391d4d;
-  height: 44px;
+  color: #56ecdb;
   outline: none;
 }
 
+.current-txt {
+  color: #56ecdb;
+}
+
+.current-icon:before {
+  color: #56ecdb !important;
+}
 
 .main-rectangular {
   width: 76%;

@@ -16,6 +16,7 @@ import {ContentComponent} from './app-home/content/content.component';
 import {AllContentComponent} from './app-home/content/all-content/all-content.component';
 import {ContentProductionComponent} from './app-home/content/content-production/content-production.component';
 import {InstagramComponent} from './app-home/content/instagram/instagram.component';
+import {CalendarComponent} from './app-home/calendar/calendar.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeBlComponent, canActivate: [LoggedInUserGuard]},
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
       {path: 'content', redirectTo: 'content/production'},
       {path: 'content/production', component: ContentProductionComponent},
       {path: 'content/all', component: AllContentComponent},
+      {path: 'calendar', component: CalendarComponent},
     ]
   },
   {path: '**', redirectTo: ''}, /*send client to home page when ever he goes to undefined url in site*/

@@ -13,9 +13,14 @@
           <textarea type="text" style="margin-bottom: 25px"
                     id="textAreaScroll"
                     formControlName="text"
-                    placeholder="متن ...">
+                    placeholder="متن ..."
+                    (keyup)="postLengthCheck('text')"
+                    maxlength="2200">
           </textarea>
-          <span class="icon-user"></span>
+          <div class="layer"></div>
+          <!--<span class="icon-user"></span>-->
+          <span *ngIf="createPostForm.controls['text'].valid"
+                class="text-counter">{{validTextLength}}</span>
 
 
           <div>
@@ -33,7 +38,8 @@
                     style="margin-top: 10px;margin-bottom: 13px" type="text"
                     id="commentAreaScroll"
                     formControlName="comment"
-                    placeholder="کامنت اول ...">
+                    placeholder="کامنت اول ..."
+                    (keyup)="postLengthCheck('comment')">
           </textarea>
           <ng-template #switch>
             <textarea readonly
@@ -45,9 +51,15 @@
             </textarea>
           </ng-template>
 
-          <span *ngIf="!mySwitch;else switchIcon" class="icon-user1"></span>
+          <!--<span *ngIf="!mySwitch;else switchIcon" class="icon-user1"></span>-->
+          <!--<ng-template #switchIcon>-->
+          <!--<span class="icon-user1-off"></span>-->
+          <!--</ng-template>-->
+
+          <span *ngIf="!mySwitch && createPostForm.controls['comment'].valid;else switchIcon"
+                class="comment-counter">{{validCommentLength}}</span>
           <ng-template #switchIcon>
-            <span class="icon-user1-off"></span>
+            <span></span>
           </ng-template>
 
 

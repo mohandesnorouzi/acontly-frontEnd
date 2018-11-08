@@ -1,11 +1,5 @@
 <div class="d-rtl">
-  <!--<app-instagram #instagram></app-instagram>-->
-  <!--<app-instagram #boxPosition></app-instagram>-->
-  <!--<div class="main-rectangular">-->
 
-  <!--<p>thi is test</p>-->
-  <!--</div>-->
-  <!--<app-instagram #boxPosition></app-instagram>-->
   <div class="narrowSideNavBar" id="closeSideNav" style="text-align: right;">
 
     <div class="narrowSideNavBar-scroll">
@@ -14,14 +8,11 @@
         <a class="icon-menu" (click)="Open()"></a>
       </li>
 
-      <li class="li-margin-icon">
-        <a class="icon-calendar"
-           routerLinkActive="active" routerLink="./content-overview"></a>
-      </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           (click)="overviewSideNav()"
+           (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
+           [ngClass]="{'current-icon' : iconActive == 'overview'}"
            routerLinkActive="active" routerLink="./analysis-overview"></a>
       </li>
 
@@ -30,15 +21,19 @@
 
       <li class="li-margin-icon">
         <a class="icon-content"
-           (click)="subSideNav('content-production')"
+           (click)="subSideNav('content-production');clickIcon('content-production');contentClick(contentCurrentPosition)"
+           [ngClass]="{'current-icon' : iconActive == 'content-production','current-txt' : linkActive == 'content-production'}"
            routerLinkActive="active" routerLink="./content/production"
-           ></a>
+        ></a>
       </li>
 
       <li class="li-margin-icon">
         <a class="icon-calendar"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
+           (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
+           [ngClass]="{'current-icon' : iconActive == 'calendar'}"
+           routerLinkActive="active" routerLink="./calendar">
+
+        </a>
       </li>
 
       <li class="li-margin-icon">
@@ -83,31 +78,29 @@
         <a class="icon-menu" (click)="Close()"></a>
       </li>
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink="./content-overview">
-          محتوا</p>
-      </li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
         <p class="sideNavBar-txt icon-calendar"
-           (click)="overviewSideNav()"
+           (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
+           [ngClass]="{'current-icon' : iconActive == 'overview','current-txt' : linkActive == 'overview'}"
            routerLinkActive="active" routerLink="./analysis-overview">
-          آمار و ارقام</p>
+          بررسی اجمالی</p>
       </li>
 
       <hr class="hr-style" style="margin-bottom: -16px">
 
-      <li class="li-margin-icon"  style="margin-top: 5px" style="direction: rtl;cursor: pointer">
+      <li class="li-margin-icon" style="margin-top: 5px" style="direction: rtl;cursor: pointer">
         <p class="sideNavBar-txt icon-calendar"
-           (click)="subSideNav('content-production')"
+           (click)="subSideNav('content-production');clickIcon('content-production');contentClick(contentCurrentPosition)"
+           [ngClass]="{'current-icon' : iconActive == 'content-production','current-txt' : linkActive == 'content-production'}"
            routerLinkActive="active" routerLink="./content/production">محتوا</p>
       </li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
         <p class="sideNavBar-txt icon-calendar"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">تقویم</p></li>
+           (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
+           [ngClass]="{'current-icon' : iconActive == 'calendar','current-txt' : linkActive == 'calendar'}"
+           routerLinkActive="active" routerLink="./calendar">تقویم</p></li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
         <p class="sideNavBar-txt icon-team-member"
@@ -145,11 +138,16 @@
 
       <li class="">
         <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
-           routerLinkActive="active" routerLink="./content/production">
+           (click)="contentClick('content-production')"
+           [ngClass]="{'current-txt' : linkActive == 'content-production'}"
+           routerLinkActive="active" routerLink="./content/production"
+        >
           ایجاد محتوا</p></li>
 
       <li class="">
         <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
+           (click)="contentClick('all-content')"
+           [ngClass]="{'current-txt' : linkActive == 'all-content'}"
            routerLinkActive="active" routerLink="./content/all">
           همه محتواها</p></li>
 

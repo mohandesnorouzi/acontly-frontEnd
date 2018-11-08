@@ -98,7 +98,7 @@ textarea {
   padding-right: 20px;
   padding-top: 20px;
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 13px;
   color: black;
   outline: none;
@@ -132,6 +132,24 @@ textarea:focus {
   position: absolute;
   top: 140px;
   left: -1%;
+}
+
+.text-counter {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c2c2c2;
+  position: absolute;
+  top: 145px;
+  left: 10px;
+}
+
+.comment-counter {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c2c2c2;
+  position: absolute;
+  top: 293px;
+  left: 10px;
 }
 
 // Scroll settings
@@ -513,4 +531,13 @@ input:checked + .slider:before {
     width: 80%;
     margin-left: 3%;
   }
+}
+
+.layer {
+  height: 30px;
+  width: 98%;
+  top: 137px;
+  right: 5px;
+  position: absolute;
+  background-color: white;
 }

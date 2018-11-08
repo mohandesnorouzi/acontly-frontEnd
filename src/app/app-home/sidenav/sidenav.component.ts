@@ -15,6 +15,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {InstagramComponent} from '../content/instagram/instagram.component';
 import {AppGlobals} from '../../services/app-globals.service';
+import {p} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-sidenav',
@@ -22,6 +23,11 @@ import {AppGlobals} from '../../services/app-globals.service';
   styleUrls: ['./sidenav.component.scss', '../content/instagram/instagram.component.scss']
 })
 export class SidenavComponent implements OnInit {
+
+  linkActive: string;
+  iconActive: string;
+  currentURL: string;
+  contentCurrentPosition: string;
 
   @ViewChild('closeSideNav') closeSideNav: ElementRef;
   @ViewChild('openSideNav') openSideNav: ElementRef;
@@ -115,6 +121,47 @@ export class SidenavComponent implements OnInit {
       }
     }
   }
+
+  clickIcon(value) {
+    this.iconActive = value;
+    this.linkActive = value;
+    // console.log(this.linkActive);
+  }
+
+  contentClick(value) {
+    if (!value) {
+      this.linkActive = this.iconActive;
+      this.router.navigate(['overview/content/production']);
+      this.contentCurrentPosition = 'content-production';
+
+    } else if (value === 'content-production') {
+      this.linkActive = value;
+      this.router.navigate(['overview/content/production']);
+      this.contentCurrentPosition = 'content-production';
+
+    } else if (value === 'all-content') {
+      this.linkActive = value;
+      this.router.navigate(['overview/content/all']);
+      this.contentCurrentPosition = 'all-content';
+    }
+
+    // setTimeout(() => {
+    //   this.currentURL = this.instaComp.getURL();
+    //   // console.log(this.currentURL);
+    // }, 1000);
+
+    // console.log(this.linkActive);
+  }
+
+
+  overviewClick(value) {
+    this.linkActive = value;
+  }
+
+  calendarClick(value) {
+    this.linkActive = value;
+  }
+
 }
 
 
