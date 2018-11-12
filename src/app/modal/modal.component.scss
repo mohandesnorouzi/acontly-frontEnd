@@ -124,7 +124,7 @@ select:focus {
 
 [data-icon]:before {
   content: attr(data-icon);
-  font-family: "untitled-font-1" !important;
+  font-family: "acontly" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -136,9 +136,8 @@ select:focus {
 }
 
 .icon-instagram:before {
-  content: "\68";
   color: #b913bd !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;
@@ -147,9 +146,8 @@ select:focus {
 }
 
 .icon-telegram:before {
-  content: "\65";
   color: #19b4ff !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 11px;
@@ -158,9 +156,8 @@ select:focus {
 }
 
 .icon-linkedin:before {
-  content: "\67";
   color: #004a73 !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;
@@ -169,9 +166,8 @@ select:focus {
 }
 
 .icon-twitter:before {
-  content: "\64";
   color: #95d8fe !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;
@@ -254,40 +250,40 @@ select:focus {
   box-shadow: 0 2px 6px 0 #c2c2c2;
 }
 
-.icon-instagram-active:before {
-  content: "\68";
+.icon-instagram-full:before {
+  content: "\e917" !important;
   color: white !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;
   right: 9px;
 }
 
-.icon-telegram-active:before {
-  content: "\65";
+.icon-telegram-full:before {
+  content: "\e930" !important;
   color: white !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 11px;
   right: 10px;
 }
 
-.icon-linkedin-active:before {
-  content: "\67";
+.icon-linkedin-full:before {
+  content: "\e91b" !important;
   color: white !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;
   right: 9px;
 }
 
-.icon-twitter-active:before {
-  content: "\64";
+.icon-twitter-full:before {
+  content: "\e933" !important;
   color: white !important;
-  font-size: 20px;
+  font-size: 25px;
   margin-left: 20px;
   position: relative;
   top: 10px;

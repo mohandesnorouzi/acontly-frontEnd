@@ -10,7 +10,7 @@
 
 
       <li class="li-margin-icon">
-        <a class="icon-calendar"
+        <a class="icon-Calendar"
            (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
            [ngClass]="{'current-icon' : iconActive == 'overview'}"
            routerLinkActive="active" routerLink="./analysis-overview"></a>
@@ -28,7 +28,7 @@
       </li>
 
       <li class="li-margin-icon">
-        <a class="icon-calendar"
+        <a class="icon-Calendar"
            (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
            [ngClass]="{'current-icon' : iconActive == 'calendar'}"
            routerLinkActive="active" routerLink="./calendar">
@@ -55,13 +55,13 @@
       </li>
 
       <li class="li-margin-icon">
-        <a class="icon-project"
+        <a class="icon-CRM"
            routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
 
       <li class="li-margin-icon">
-        <a class="icon-calendar"
+        <a class="icon-project"
            routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')"></a>
       </li>
@@ -80,7 +80,7 @@
 
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-calendar"
+        <p class="sideNavBar-txt icon-Calendar"
            (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
            [ngClass]="{'current-icon' : iconActive == 'overview','current-txt' : linkActive == 'overview'}"
            routerLinkActive="active" routerLink="./analysis-overview">
@@ -90,14 +90,14 @@
       <hr class="hr-style" style="margin-bottom: -16px">
 
       <li class="li-margin-icon" style="margin-top: 5px" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-calendar"
+        <p class="sideNavBar-txt icon-content"
            (click)="subSideNav('content-production');clickIcon('content-production');contentClick(contentCurrentPosition)"
            [ngClass]="{'current-icon' : iconActive == 'content-production','current-txt' : linkActive == 'content-production'}"
            routerLinkActive="active" routerLink="./content/production">محتوا</p>
       </li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-calendar"
+        <p class="sideNavBar-txt icon-Calendar"
            (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
            [ngClass]="{'current-icon' : iconActive == 'calendar','current-txt' : linkActive == 'calendar'}"
            routerLinkActive="active" routerLink="./calendar">تقویم</p></li>
@@ -118,14 +118,14 @@
            (click)="subSideNav('content-production')">آنالیز</p></li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-project"
+        <p class="sideNavBar-txt icon-CRM"
            routerLinkActive="active" routerLink=""
            (click)="subSideNav('content-production')">مدیریت مخاطبان</p></li>
 
       <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-calendar"
+        <p class="sideNavBar-txt icon-project"
            routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">پروژه ها</p></li>
+           (click)="subSideNav('content-production')">مدیریت پروژه ها</p></li>
 
     </div>
 

@@ -42,7 +42,11 @@ import {IndustryService} from './services/industry.service';
 import {CompanyRoleService} from './services/company-role.service';
 import {ModalComponent} from './modal/modal.component';
 import {MyRendererService} from './services/renderer.service';
-import { CalendarComponent } from './app-home/calendar/calendar.component';
+import {CalendarComponent} from './app-home/calendar/calendar.component';
+import {TwitterComponent} from './app-home/content/twitter/twitter.component';
+import {TelegramComponent} from './app-home/content/telegram/telegram.component';
+import {LinkedinComponent} from './app-home/content/linkedin/linkedin.component';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,10 @@ import { CalendarComponent } from './app-home/calendar/calendar.component';
     AllContentComponent,
     InstagramComponent,
     ModalComponent,
-    CalendarComponent
+    CalendarComponent,
+    TwitterComponent,
+    TelegramComponent,
+    LinkedinComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +86,8 @@ import { CalendarComponent } from './app-home/calendar/calendar.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AngularSvgIconModule
   ],
   providers: [HeaderService, AuthService, LoggedInUserGuard, AuthGuard, FormValidation, SidenavService, AppGlobals,
     CompanySizeService, IndustryService, CompanyRoleService, ModalComponent, InstagramComponent, SidenavComponent,

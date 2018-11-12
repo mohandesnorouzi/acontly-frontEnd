@@ -151,6 +151,23 @@ export class SidenavComponent implements OnInit {
     // }, 1000);
 
     // console.log(this.linkActive);
+
+    // const navProperty = document.getElementById('subTitleSideNav');
+    // const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
+    // const boxProperty = document.getElementById('boxPosition');
+    //
+    // if (navWidth !== '0') {
+    //
+    //   if (boxProperty !== null) {
+    //     document.getElementById('boxPosition').style.marginRight = '204px';
+    //   }
+    // } else {
+    //   if (boxProperty !== null) {
+    //     document.getElementById('boxPosition').style.marginRight = '104px';
+    //   }
+    // }
+
+
   }
 
 

@@ -1,1 +1,9 @@
-<app-instagram></app-instagram>
+<div class="content-container d-rtl">
+  <div class="main-rectangular d-rtl" id="boxPosition" (window:resize)="onResize()">
+
+    <app-instagram *ngIf="whichSocial === 'instagram'"></app-instagram>
+    <app-telegram *ngIf="whichSocial === 'telegram'"></app-telegram>
+
+  </div>
+</div>
+

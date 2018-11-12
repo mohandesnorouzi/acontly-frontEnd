@@ -73,22 +73,20 @@
   border: 2px solid #c2c2c2;
   margin-right: 20px;
   display: block;
-  padding-top: 4px;
 }
 
 /* Create a custom circle */
 .social {
-  position: relative;
-  height: 37px;
-  width: 37px;
-  //background-color: white;
-  border-radius: 50%;
-  border: 2px solid #c2c2c2;
-  margin-left: 5px;
-  margin-right: 5px;
-  display: inline-block;
-  padding-top: 4px;
-}
+   position: relative;
+   height: 37px;
+   width: 37px;
+   //background-color: white;
+   border-radius: 50%;
+   border: 2px solid #c2c2c2;
+   margin-left: 5px;
+   margin-right: 5px;
+   display: inline-block;
+ }
 
 /* Create a custom circle */
 .social-active {
@@ -101,7 +99,6 @@
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
-  padding-top: 4px;
 }
 
 /* Create a custom circle */
@@ -115,7 +112,6 @@
   margin-right: 0;
   margin-left: 20px;
   display: block;
-  padding-top: 4px;
 }
 
 .fit-icon {
@@ -124,9 +120,10 @@
   text-align: center;
 }
 
+
 //[data-icon]:before {
+//  font-family: "acontly" !important;
 //  content: attr(data-icon);
-//  font-family: "untitled-font-1" !important;
 //  font-style: normal !important;
 //  font-weight: normal !important;
 //  font-variant: normal !important;
@@ -137,121 +134,102 @@
 //  -moz-osx-font-smoothing: grayscale;
 //}
 
-[data-icon]:before {
-  font-family: "test" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .icon-user:before {
-  content: "\31";
   color: #c2c2c2 !important;
   font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 2px;
+  top: 5px;
   right: 7px;
   //font-weight: 500;
 }
 
 .icon-plus:before {
-  content: "\48";
   color: #c2c2c2 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
   font-weight: bold !important;
 }
 
 .icon-instagram:before {
-  content: "\78";
   color: #c2c2c2 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
-.icon-instagram-active:before {
-  content: "\78";
+.icon-instagram-full:before {
+  content: "\e917" !important;
   color: #b913bd !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
 
 .icon-telegram:before {
-  content: "\56";
   color: #c2c2c2 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 9px;
+  top: 7px;
+  right: 7px;
 }
 
-.icon-telegram-active:before {
-  content: "\56";
+.icon-telegram-full:before {
+  content: "\e930" !important;
   color: #19b4ff !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 9px;
+  top: 7px;
+  right: 7px;
 }
 
 .icon-linkedin:before {
-  content: "\42";
   color: #c2c2c2 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 4px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
-.icon-linkedin-active:before {
-  content: "\42";
+.icon-linkedin-full:before {
+  content: "\e91b" !important;
   color: #004a73 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 4px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
 
 .icon-twitter:before {
-  content: "\59";
   color: #c2c2c2 !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
-.icon-twitter-active:before {
-  content: "\59";
+.icon-twitter-full:before {
+  content: "\e933" !important;
   color: #95d8fe !important;
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 20px;
   position: relative;
-  top: 5px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }
 
 

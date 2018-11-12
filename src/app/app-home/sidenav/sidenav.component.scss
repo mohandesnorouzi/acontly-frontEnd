@@ -159,21 +159,20 @@
   border: 1px solid #5ba7b4;
 }
 
-[data-icon]:before {
-  content: attr(data-icon);
-  font-family: "untitled-font-1" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+//[data-icon]:before {
+//  content: attr(data-icon);
+//  font-family: "untitled-font-1" !important;
+//  font-style: normal !important;
+//  font-weight: normal !important;
+//  font-variant: normal !important;
+//  text-transform: none !important;
+//  speak: none;
+//  line-height: 1;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//}
 
 .icon-menu:before {
-  content: "\44";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -189,7 +188,6 @@
 }
 
 .icon-content:before {
-  content: "\6b";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -205,8 +203,7 @@
   color: #56ecdb !important;
 }
 
-.icon-calendar:before {
-  content: "\68";
+.icon-Calendar:before {
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -214,16 +211,15 @@
   top: 6px;
 }
 
-.icon-calendar:hover:before {
+.icon-Calendar:hover:before {
   color: #56ecdb !important;
 }
 
-.icon-calendar:focus:before {
+.icon-Calendar:focus:before {
   color: #56ecdb !important;
 }
 
 .icon-team-member:before {
-  content: "\54";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -240,7 +236,6 @@
 }
 
 .icon-notification:before {
-  content: "\47";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -257,7 +252,6 @@
 }
 
 .icon-analyze:before {
-  content: "\66";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;
@@ -273,8 +267,23 @@
   color: #56ecdb !important;
 }
 
+.icon-CRM:before {
+  color: #6b289b !important;
+  font-size: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 6px;
+}
+
+.icon-CRM:hover:before {
+  color: #56ecdb !important;
+}
+
+.icon-CRM:focus:before {
+  color: #56ecdb !important;
+}
+
 .icon-project:before {
-  content: "\4b";
   color: #6b289b !important;
   font-size: 20px;
   margin-left: 20px;

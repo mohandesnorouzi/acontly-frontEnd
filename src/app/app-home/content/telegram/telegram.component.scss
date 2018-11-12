@@ -434,22 +434,3 @@ input:checked + .slider:before {
   top: 135px;
   left: 700px;
 }
-
-.icon-test {
-  /deep/ path {
-    width: 30px;
-    fill: #c2c2c2;
-    font-size: 14px;
-    margin-left: 20px;
-    position: relative;
-    top: 5px;
-    right: 8px;
-  }
-  //width: 50px;
-  //color: #c2c2c2 !important;
-  //font-size: 14px;
-  //margin-left: 20px;
-  //position: relative;
-  //top: 5px;
-  //right: 8px;
-}

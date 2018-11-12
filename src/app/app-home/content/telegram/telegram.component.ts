@@ -1,16 +1,14 @@
-import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppGlobals} from '../../../services/app-globals.service';
-import {FormControl, FormGroup, MaxLengthValidator, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
-
 @Component({
-  selector: 'app-instagram',
-  templateUrl: './instagram.component.html',
-  styleUrls: ['./instagram.component.scss']
+  selector: 'app-telegram',
+  templateUrl: './telegram.component.html',
+  styleUrls: ['./telegram.component.scss']
 })
-
-export class InstagramComponent implements OnInit {
+export class TelegramComponent implements OnInit {
 
   mySwitch: boolean;
   searchValue: string;
@@ -22,7 +20,6 @@ export class InstagramComponent implements OnInit {
   constructor(public appGlobal: AppGlobals, private router: Router) {
     this.mySwitch = false;
   }
-
 
   postLengthCheck(input) {
 
@@ -57,4 +54,5 @@ export class InstagramComponent implements OnInit {
     });
 
   }
+
 }
