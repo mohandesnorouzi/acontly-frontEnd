@@ -36,7 +36,7 @@ export class TelegramComponent implements OnInit {
     }
   }
 
-  // Check for first comment
+  // Turn off or on comment
   SwitchStatus() {
     this.mySwitch = !this.mySwitch;
     this.searchValue = '';

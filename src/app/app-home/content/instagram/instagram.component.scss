@@ -53,18 +53,6 @@ textarea:focus {
   border: 1px solid #55d6be;
 }
 
-//[data-icon]:before {
-//  content: attr(data-icon);
-//  font-family: "untitled-font-1" !important;
-//  font-style: normal !important;
-//  font-weight: normal !important;
-//  font-variant: normal !important;
-//  text-transform: none !important;
-//  speak: none;
-//  line-height: 1;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//}
 
 .icon-add-video-or-picture2:before {
   color: #c2c2c2 !important;
@@ -140,7 +128,7 @@ textarea:focus {
   margin-left: 20px;
   position: absolute;
   top: 141px;
-  left: 660px;
+  right: 50px;
 }
 
 .text-counter {
@@ -239,32 +227,43 @@ textarea:focus {
   height: 35px;
   width: 90px;
   border-radius: 17px;
-  border: 1px solid #56C8FF;
-  background-color: white;
+  background: linear-gradient(to left, #6C299B 0, #00337b 100%);
   text-align: center;
   line-height: 15px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   display: inline-block;
-  color: #56C8FF;
-  padding: 0;
+  color: #6C299B;
+  padding: 1px;
   box-shadow: none;
 }
 
+.draft-btn span {
+  background: white;
+  padding: 9px 1px;
+  border-radius: 15px;
+  display: block;
+}
 .publishNow-btn {
   height: 35px;
   width: 90px;
   border-radius: 17px;
-  border: 1px solid #56C8FF;
-  background-color: white;
+  background: linear-gradient(to left, #6C299B 0, #00337b 100%);
   text-align: center;
   line-height: 15px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   display: inline-block;
-  color: #56C8FF;
-  padding: 0;
+  color: #6C299B;
+  padding: 1px;
   box-shadow: none;
+}
+
+.publishNow-btn span {
+  background: white;
+  padding: 9px 1px;
+  border-radius: 15px;
+  display: block;
 }
 
 .schedule-btn {
@@ -273,12 +272,12 @@ textarea:focus {
   border-radius: 17px;
   text-align: center;
   line-height: 15px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   display: inline-block;
   color: white;
   padding: 0;
-  background-image: linear-gradient(to left, #56C8FF 0, #55D6BE 100%);
+  background-image: linear-gradient(to left, #6C299B 0, #00337b 100%);
   background-repeat: no-repeat;
   box-shadow: none;
 }
@@ -386,8 +385,8 @@ input:checked + .slider:before {
   height: 84px;
   width: 100%;
   border-radius: 5px;
-  border: 1px solid #dddddd;
-  background-color: white;
+  border: 1px solid #c1c1c1;
+  background-color: #fdfdfd;
   direction: rtl;
   padding-right: 20px;
   padding-top: 20px;
@@ -432,7 +431,7 @@ input:checked + .slider:before {
   //padding-top: 4px;
   position: absolute;
   top: 135px;
-  left: 700px;
+  right: 8px;
 }
 
 .icon-test {

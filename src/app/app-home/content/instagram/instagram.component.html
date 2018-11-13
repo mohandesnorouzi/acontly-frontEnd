@@ -11,7 +11,8 @@
     bottom: 33px;">اینستاگرام</p>
 </div>
 
-<form [formGroup]="createPostForm">  <!--// syncing form with my html in this line-->
+<form [formGroup]="createPostForm" style="bottom: 24px;position: relative;">
+  <!--// syncing form with my html in this line-->
   <div class="file-txt-div">
 
     <div class="file-rectangular">
@@ -88,10 +89,10 @@
 
       <div style="width: 101%;text-align: left">
         <button type="button" class="btn draft-btn">
-          ذخیره
+          <span>ذخیره</span>
         </button>
         <button type="button" class="btn publishNow-btn">
-          الان
+          <span>الان</span>
         </button>
         <button type="button" class="btn schedule-btn">
           بعدا

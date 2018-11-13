@@ -17,7 +17,7 @@
   height: 100%;
   overflow-y: auto;
   direction: ltr;
-  z-index: 1;
+  z-index: 2;
   //box-shadow: -5px 0px 15px 0px #d8d8d8;
   box-shadow: -5px 10px 15px #d8d8d8;
 }
@@ -74,7 +74,7 @@
   overflow-y: auto;
   direction: ltr;
   transition: 0.5s;
-  z-index: 1;
+  z-index: 2;
   box-shadow: -5px 10px 15px #d8d8d8;
 }
 
@@ -123,7 +123,7 @@
   background-color: #4c1473;
   top: 70px;
   bottom: 0px;
-  z-index: 1;
+  z-index: 2;
   height: 700px;
   overflow: hidden;
   position: fixed;
@@ -159,18 +159,6 @@
   border: 1px solid #5ba7b4;
 }
 
-//[data-icon]:before {
-//  content: attr(data-icon);
-//  font-family: "untitled-font-1" !important;
-//  font-style: normal !important;
-//  font-weight: normal !important;
-//  font-variant: normal !important;
-//  text-transform: none !important;
-//  speak: none;
-//  line-height: 1;
-//  -webkit-font-smoothing: antialiased;
-//  -moz-osx-font-smoothing: grayscale;
-//}
 
 .icon-menu:before {
   color: #6b289b !important;
@@ -180,11 +168,11 @@
 }
 
 .icon-menu:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-menu:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-content:before {
@@ -212,11 +200,11 @@
 }
 
 .icon-Calendar:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-Calendar:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-team-member:before {
@@ -228,11 +216,11 @@
 }
 
 .icon-team-member:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-team-member:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-notification:before {
@@ -244,11 +232,11 @@
 }
 
 .icon-notification:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-notification:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-analyze:before {
@@ -260,11 +248,11 @@
 }
 
 .icon-analyze:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-analyze:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-CRM:before {
@@ -276,11 +264,11 @@
 }
 
 .icon-CRM:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-CRM:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-project:before {
@@ -292,11 +280,11 @@
 }
 
 .icon-project:hover:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .icon-project:focus:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .sideNavBarSubtitle-txt {
@@ -316,16 +304,16 @@
 }
 
 .sideNavBarSubtitle-txt:focus {
-  color: #56ecdb;
+  color: #55d6be;
   outline: none;
 }
 
 .current-txt {
-  color: #56ecdb;
+  color: #55d6be;
 }
 
 .current-icon:before {
-  color: #56ecdb !important;
+  color: #55d6be !important;
 }
 
 .main-rectangular {

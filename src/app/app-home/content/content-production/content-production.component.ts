@@ -34,8 +34,9 @@ export class ContentProductionComponent implements OnInit {
 
   ngOnInit() {
 
-    this.whichSocial = 'telegram';
+    // this.whichSocial = 'telegram';
     // this.whichSocial = 'instagram';
+    this.whichSocial = 'linkedin';
     this.innerWidth = window.innerWidth;
     if (this.appGlobal.checksubTitleSideNav) {
       if (this.innerWidth > 1200) {
