@@ -1,0 +1,56 @@
+<!--ADD social Modal-->
+<div mdbModal #addSocialModal="mdbModal" class="modal fade top" id="addSocialModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered" style="justify-content: center; max-width: 100%"
+       role="document">
+    <div class="modal-content addSocialModal-size modal-lg"
+         style="text-align: center">
+
+
+      <!--<form [formGroup]="createProjectForm" (ngSubmit)="onAddSocial()">-->
+
+      <div class="modal-body mx-3 d-rtl" style="margin-top: 50px;margin-bottom: 10px">
+
+        <a class="socialProject icon-instagram"
+           (click)="onClickSocial('instagram')"
+           style="border: 1px solid #b913bd"
+           [ngClass]="{'activeInstagram' : social == 'instagram' , 'icon-instagram-full': social == 'instagram'}"></a>
+
+        <a class="socialProject icon-telegram"
+           (click)="onClickSocial('telegram')"
+           style="border: 1px solid #19b4ff"
+           [ngClass]="{'activeTelegram' : social == 'telegram' , 'icon-telegram-full': social == 'telegram'}"></a>
+
+        <a class="socialProject icon-linkedin"
+           (click)="onClickSocial('linkedin')"
+           style="border: 1px solid #004a73"
+           [ngClass]="{'activeLinkedin' : social == 'linkedin' , 'icon-linkedin-full': social == 'linkedin'}"></a>
+
+        <a class="socialProject icon-twitter"
+           (click)="onClickSocial('twitter')"
+           style="border: 1px solid #95d8fe"
+           [ngClass]="{'activeTwitter' : social == 'twitter' , 'icon-twitter-full': social == 'twitter'}"></a>
+
+      </div>
+
+      <li class="create-project-btn-position d-rtl" style="margin-bottom: 50px;">
+
+        <button class="btn cancel-btn" (click)="closeAddSocialModal()">
+          لغو
+        </button>
+        <button [disabled]="!submitSocialActive"
+                type="submit" class="btn create-project-btn"
+                (click)="onAddSocial(social)">
+          اتصال اکانت
+        </button>
+
+      </li>
+
+      <!--</form>-->
+    </div>
+  </div>
+
+</div>
+<!--ADD social Modal-->

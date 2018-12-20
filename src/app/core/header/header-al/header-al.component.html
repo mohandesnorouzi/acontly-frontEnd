@@ -1,0 +1,89 @@
+<!--First must call projectModal from modal.component and it is so important put this line outside of header
+because in header i use z-index =1 and it made modal go under modal-background so this line can not be in
+navBar tag and must place somewhere out-->
+<!--<app-modal #projectModal></app-modal>-->
+<app-add-project-modal #projectModal></app-add-project-modal>
+<app-add-social-modal #addSocialModal></app-add-social-modal>
+<!--<app-modal #addSocialModal></app-modal>-->
+<!--<app-modal #instagramm></app-modal>-->
+
+<!--Navbar-->
+<nav class="navbar navbar-expand header-setting">
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" style="width: 100%">
+
+
+    <div style="text-align: center">
+      <a class="account-profile"
+         (click)="projectModal.openAddProjectModal()"
+         data-toggle="modal" data-target="#projctModal">
+        <mat-icon svgIcon="plus" class="icon-plus"></mat-icon>
+      </a>
+    </div>
+
+    <div class="middle-content">
+      <a *ngIf="!registerInstagramSocials;else instaActive" class="social">
+        <mat-icon svgIcon="instagram" class="icon-instagram"></mat-icon>
+      </a>
+      <ng-template #instaActive>
+        <a class="social-active" (click)="onActiveSocial('instagram')">
+          <a *ngIf="appGlobal.activeSocial === 'instagram'"
+             class="active-social-sign-instagram"></a>
+          <mat-icon svgIcon="instagram-full" class="icon-instagram-full"></mat-icon>
+        </a>
+      </ng-template>
+
+
+      <a *ngIf="!registerTelegramSocials;else telegramActive" class="social">
+        <mat-icon svgIcon="telegram" class="icon-telegram"></mat-icon>
+      </a>
+      <ng-template #telegramActive>
+        <a class="social-active" (click)="onActiveSocial('telegram')">
+          <a *ngIf="appGlobal.activeSocial === 'telegram'"
+             class="active-social-sign-instagram"></a>
+          <mat-icon svgIcon="telegram-full" class="icon-telegram-full"></mat-icon>
+        </a>
+      </ng-template>
+
+      <a *ngIf="!registerLinkedinSocials;else linkedinActive" class="social">
+        <mat-icon svgIcon="linkedin" class="icon-linkedin"></mat-icon>
+      </a>
+      <ng-template #linkedinActive>
+        <a class="social-active" (click)="onActiveSocial('linkedin')">
+          <a *ngIf="appGlobal.activeSocial === 'linkedin'"
+             class="active-social-sign-instagram"></a>
+          <mat-icon svgIcon="linkedin-full" class="icon-linkedin-full"></mat-icon>
+        </a>
+      </ng-template>
+
+      <a *ngIf="!registerTwitterSocials;else twitterActive" class="social">
+        <mat-icon svgIcon="twitter" class="icon-twitter"></mat-icon>
+      </a>
+      <ng-template #twitterActive>
+        <a class="social-active" (click)="onActiveSocial('twitter')">
+          <a *ngIf="appGlobal.activeSocial === 'twitter'"
+             class="active-social-sign-instagram"></a>
+          <mat-icon svgIcon="twitter-full" class="icon-twitter-full"></mat-icon>
+        </a>
+      </ng-template>
+
+
+      <a class="social"
+         (click)="addSocialModal.openAddSocialModal()"
+         data-toggle="modal" data-target="#addSocialModal">
+        <mat-icon svgIcon="plus" class="icon-plus"></mat-icon>
+      </a>
+    </div>
+
+    <div style="text-align: center">
+      <a class="profile" (click)="onLogoutSubmit()">
+        <mat-icon svgIcon="user-profile" class="icon-user-profile"></mat-icon>
+      </a>
+      <!--<a class="profile" (click)="onLogoutSubmit()"><img src="assets/imgs/icons/user.svg" height="20"></a>-->
+    </div>
+
+  </div>
+  <!-- Collapsible content -->
+</nav>
+<!--Navbar-->

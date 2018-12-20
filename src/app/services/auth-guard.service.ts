@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
 import {AuthService} from './auth.service';
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {AppGlobals} from './app-globals.service';
@@ -28,7 +28,7 @@ export class LoggedInUserGuard implements CanActivate {
         } else {
           this.appGlobal.isAuthenticated = true;
           observer.next(false);
-          this.router.navigate(['/overview']);
+          this.router.navigate(['/home']);
         }
       });
     });
@@ -61,6 +61,8 @@ export class AuthGuard implements CanActivate {
             return false;
           } else {
             this.appGlobal.isAuthenticated = true;
+            // console.log(this.appGlobal.isAuthenticated);
+            // console.log('i am here');
             return true;
           }
         }

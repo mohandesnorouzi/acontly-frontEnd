@@ -1,0 +1,78 @@
+<div class="content-container d-rtl">
+  <div #boxPosition class="main-rectangular d-rtl" id="boxPosition" (window:resize)="onResize()">
+
+    <div class="icon-telegram" style="text-align: right;bottom: 58px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;">
+      <p style="position: relative;
+	    right: 29px;
+    bottom: 33px;">تلگرام</p>
+    </div>
+
+    <form [formGroup]="createPostForm" style="bottom: 21px;position: relative;">
+      <!--// syncing form with my html in this line-->
+
+      <div style="text-align: left;width: 96%">
+        <button type="button" class="btn reply-btn">
+          <span>ریپلای به پست گذشته</span>
+        </button>
+      </div>
+
+      <div class="file-txt-div">
+
+        <div class="file-rectangular">
+
+          <div class="icon-add-video-or-picture2" style="cursor: pointer"></div>
+          <div class="upload-txt" style="cursor: pointer">بارگذاری عکس یا ویدئو</div>
+          <div class="upload-tools-circle">
+            <a class="icon-del"></a>
+          </div>
+          <div class="upload-tools-circle">
+            <a class="icon-edit"></a>
+          </div>
+          <div class="upload-tools-circle">
+            <a class="icon-preview"></a>
+          </div>
+
+        </div>
+
+
+        <div class="form-group" style="text-align: right;width: 100%;position: relative">
+          <textarea type="text" style="margin-bottom: 25px"
+                    id="textAreaScroll"
+                    formControlName="text"
+                    placeholder="متن ..."
+                    (keyup)="postLengthCheck('text')"
+                    maxlength="2200">
+          </textarea>
+          <div class="layer"></div>
+          <!--<span class="icon-user"></span>-->
+          <span *ngIf="createPostForm.controls['text'].valid"
+                class="text-counter">{{validTextLength}}</span>
+          <a class="pre-saved-circle icon-Pre-saved-text"></a>
+          <a class="icon-emoji"></a>
+
+
+          <div style="width: 101%;text-align: left">
+            <button type="button" class="btn draft-btn">
+              <span>ذخیره</span>
+            </button>
+            <button type="button" class="btn publishNow-btn">
+              <span>الان</span>
+            </button>
+            <button type="button" class="btn schedule-btn">
+              بعدا
+            </button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </form>
+
+  </div>
+</div>

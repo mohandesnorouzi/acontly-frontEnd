@@ -1,0 +1,163 @@
+// After Login Part
+.header-setting {
+  direction: rtl;
+  height: 70px;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  // Header shadow
+  -webkit-box-shadow: 0px 4px 19px 0px #c2c2c2; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0px 4px 19px 0px #c2c2c2; /* Firefox 3.5 - 3.6 */
+  box-shadow: 0px 4px 19px 0px #c2c2c2; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  background-image: linear-gradient(to left, #6C299B 0, #6C299B 35%, #00337b 100%);
+  //box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+}
+
+.middle-content {
+  width: 95%;
+  text-align: center;
+}
+
+/* Create a custom circle for account */
+.account-profile {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+  margin-right: 20px;
+  display: block;
+}
+
+/* Create a custom circle for social platform */
+.social {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/* Create a custom circle for social platform in active mode */
+.social-active {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  //display: inline-flex;
+}
+
+/* Create a custom circle as profile */
+.profile {
+  position: relative;
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+  margin-right: 0;
+  margin-left: 20px;
+  display: block;
+}
+
+.active-social-sign-instagram {
+  //position: relative;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: green;
+  display: inline-block;
+  z-index: 3;
+  right: -5px;
+  top: -5px;
+}
+
+.fit-icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.icon-plus {
+  color: #c2c2c2;
+  height: 20px;
+  width: 20px;
+  //margin-left: 20px;
+  position: relative;
+  top: 6px;
+  //right: 6px;
+}
+
+.icon-instagram {
+  color: #c2c2c2;
+  position: relative;
+  top: 4px;
+}
+
+.icon-instagram-full {
+  color: #b913bd;
+  position: relative;
+  top: 4px;
+}
+
+.icon-telegram {
+  color: #c2c2c2;
+  position: relative;
+  top: 4px;
+  right: 2px;
+}
+
+.icon-telegram-full {
+  color: #19b4ff;
+  position: relative;
+  top: 4px;
+  right: 2px;
+}
+
+.icon-linkedin {
+  color: #c2c2c2;
+  position: relative;
+  top: 4px;
+}
+
+.icon-linkedin-full {
+  color: #004a73;
+  position: relative;
+  top: 4px;
+}
+
+.icon-twitter {
+  color: #c2c2c2;
+  position: relative;
+  top: 4px;
+}
+
+.icon-twitter-full {
+  color: #95d8fe;
+  position: relative;
+  top: 4px;
+}
+
+.icon-user-profile {
+  color: #c2c2c2;
+  position: relative;
+  top: 5px;
+}
+
+.modal-notify .modal-header {
+  border-radius: 3px 3px 0 0;
+}
+
+.modal-notify .modal-content {
+  border-radius: 3px;
+}

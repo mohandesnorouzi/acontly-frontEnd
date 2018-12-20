@@ -5,23 +5,23 @@
   <div class="back-rectangle">
 
     <!-- Flex box -->
-    <div class="flex-grow-1 flex-box-position">
+    <div class="flex-box-position">
       <div class="p-2 flex-box-txt">
-        <a routerLinkActive="active" routerLink="/login" class="title-property txt-custom-white">ورود</a>
+        <a routerLinkActive="active" routerLink="/app/login" class="title-property txt-custom-white">ورود</a>
       </div>
       <div class="p-2 flex-box-txt">
-        <a routerLinkActive="active" routerLink="/sign-up" class="title-property txt-custom-white">عضویت</a>
+        <a routerLinkActive="active" routerLink="/app/sign-up" class="title-property txt-custom-white">عضویت</a>
       </div>
     </div>
     <!-- Flex box -->
 
 
     <!--Grid column-->
-    <div class="front-rectangle text-center"> <!--//text-center need to make button align in center of screen-->
+    <div class="front-rectangle text-center" style="direction: rtl"> <!--//text-center need to make button align in center of screen-->
       <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
 
 
-        <div class="flex-box2-txt" style="float: right ;text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input2"></label>
           <input type="text"
                  id="input2"
@@ -37,7 +37,7 @@
         </div>
 
 
-        <div class="flex-box2-txt" style="text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input1"></label>
           <input type="text"
                  id="input1"
@@ -53,7 +53,7 @@
         </div>
 
 
-        <div class="flex-box2-txt" style="float: right ;text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input4"></label>
           <input type="text"
                  id="input4"
@@ -69,7 +69,7 @@
         </div>
 
 
-        <div class="flex-box2-txt" style="text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input3"></label>
           <select *ngIf="signUpForm.get('companySize').invalid ; else validCompanySize"
                   type="text" class="select-dropDown"
@@ -95,7 +95,7 @@
         </div>
 
 
-        <div class="flex-box2-txt" style="float: right;text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input6"></label>
           <select *ngIf="signUpForm.get('companyField').invalid ; else validCompanyField"
                   type="text" class="select-dropDown"
@@ -150,7 +150,7 @@
         <!--</div>-->
 
 
-        <div class="flex-box2-txt" style="text-align: right">
+        <div class="flex-box2-txt">
           <label class="d-rtl" for="input5"></label>
           <input type="text"
                  id="input5"
@@ -172,12 +172,12 @@
                  id="input7"
                  formControlName="email"
                  placeholder="ایمیل *">
-          <row class="help-block1" *ngFor="let validation of signupValidationMessages.email">
+          <div class="help-block1" *ngFor="let validation of signupValidationMessages.email">
             <span *ngIf="signUpForm.get('email').hasError(validation.type) &&
              signUpForm.get('email').dirty">
             {{validation.message}}
           </span>
-          </row>
+          </div>
         </div>
 
         <div class="flex-box3-txt">
@@ -187,7 +187,7 @@
                  formControlName="password"
                  placeholder="رمز عبور *"
                  autoComplete="off">
-          <div style="position: relative" class="help-block1">
+          <div class="help-block1">
             <span *ngIf="signUpForm.get('password').hasError('required') &&
             signUpForm.get('password').dirty">
             وارد کردن رمز ورود الزامیست!
@@ -197,9 +197,9 @@
 
 
         <!-- Default unchecked box -->
-        <div>
+        <div class="checkbox-position-mobile-set">
 
-          <label class="check-box-position">
+          <label class="check-box-position" style="margin-top: 25px;">
             یک حرف کوچک
             <input type="checkbox" id="defaultUnchecked">
             <span class="checkmark1" *ngIf="!signUpForm.get('password').hasError('required') &&

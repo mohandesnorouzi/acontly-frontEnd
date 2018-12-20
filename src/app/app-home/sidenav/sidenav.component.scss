@@ -52,10 +52,25 @@
   background-color: #5ba7b4;
 }
 
+.icon-style {
+  //margin-top: 30px;
+  //margin-right: 19px;
+  cursor: pointer;
+  color: #6b289b;
+  //right: 2px;
+  position: relative;
+  outline: none;
+}
+
+.icon-style:hover {
+  color: #56ecdb;
+}
+
 // Modify icon position
 .li-margin-icon {
   margin-top: 30px;
-  margin-right: 40px;
+  //margin-right: 40px;
+  margin-right: 19px;
 }
 
 // Set style for main section of sideNavBar
@@ -83,7 +98,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 180px;
   position: absolute;
   height: 660px;
   overflow: hidden;
@@ -119,10 +134,10 @@
   list-style-type: none;
   margin-right: 60px;
   padding: 0;
-  width: 0px;
+  width: 0;
   background-color: #4c1473;
   top: 70px;
-  bottom: 0px;
+  bottom: 0;
   z-index: 2;
   height: 700px;
   overflow: hidden;
@@ -141,6 +156,8 @@
   line-height: 24px;
   font-weight: 500;
   outline: none;
+  position: relative;
+  right: 10px;
 }
 
 .sideNavBar-txt:hover {
@@ -159,6 +176,14 @@
   border: 1px solid #5ba7b4;
 }
 
+.icon-div {
+  direction: rtl;
+  cursor: pointer;
+  margin-top: 30px;
+  padding-right: 19px;
+  outline: none;
+  //margin-bottom: 20px;
+}
 
 .icon-menu:before {
   color: #6b289b !important;
@@ -309,10 +334,14 @@
 }
 
 .current-txt {
-  color: #55d6be;
+  color: #55d6be !important;
 }
 
-.current-icon:before {
+//.current-icon:before {
+//  color: #55d6be !important;
+//}
+
+.current-icon {
   color: #55d6be !important;
 }
 

@@ -1,0 +1,108 @@
+// Css for Value Proposition background and overall section div
+.suitability-bg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+// Css for setting container of value proposition context | this part must change related to media query
+.suitability-container {
+  //width: 950px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.suitability-text {
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  direction: rtl;
+  font-weight: 500;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.main-box {
+  width: 1200px;
+  box-sizing: border-box;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.card {
+  width: 326px;
+  min-height: 313px;
+  box-shadow: 0 0 25px #c1c1c1; //applying shadow to 4 sides of card
+  border-radius: 5px;
+  position: relative;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 25px;
+  /* gradient shining border */
+  background-image: linear-gradient(to left, #75e7a4, #fae232);
+  background-repeat: no-repeat;
+  background-size: 100% 78px; // first number for width and second number for height of background
+}
+
+.img-border {
+  border-radius: 50%;
+  margin-left: 125px;
+  margin-top: 30px;
+  border: 4px solid white;
+}
+
+// Css for button in top banner
+.btn-property {
+  background-color: rgb(253, 199, 27);
+  color: black;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  line-height: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  height: 50px;
+  width: 170px;
+  //display: inline-block;
+  margin-top: 35px;
+  position: relative; //necessary to make context come over overlay
+  z-index: 1; //necessary to make context come over overlay
+}
+
+@media screen and (max-width: 1200px) {
+
+  .main-box {
+    width: 1100px;
+  }
+  .card {
+    width: 300px;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+  .img-border {
+    margin-left: 110px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .main-box {
+    width: 900px;
+  }
+  .card {
+    width: 235px;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+  .img-border {
+    margin-left: 77.5px;
+  }
+}

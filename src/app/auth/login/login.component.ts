@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit, Renderer2} from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
-import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
-import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +24,13 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private renderer: Renderer2, private router: Router, private authService: AuthService) {
     this.renderer.setStyle(document.body, 'background-color', '#E7fff4');
+
+    // Make page start from top
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   ngOnInit() {
@@ -43,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         if (data['ok']) {
           const token = data['result']['token'];
           localStorage.setItem('token', token);
-          this.router.navigate(['/overview']);
+          this.router.navigate(['/home']);
 
           // Reset login form after successful submit
           this.loginForm.reset({

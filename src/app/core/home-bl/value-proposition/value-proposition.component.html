@@ -1,0 +1,24 @@
+<!--Value Proposition-->
+<div class="vp-bg">
+  <div class="vp-container">
+    <div class="vp-section">
+      <!--Grid row-->
+      <div class="row d-rtl" *ngFor='let valueP of vp ; let i=index' [class.d-rtl]="i%2 == 0">
+        <!--Grid column-->
+        <div class="vp-txt-pd">
+          <h1 class="vp-title">{{ valueP.title }}</h1>
+          <h2 class="vp-subtitle">{{ valueP.description }}</h2>
+          <button class="btn vp-btn">
+            بیشتر یاد بگیرید
+          </button>
+        </div>
+        <div [class.img-position-modification-left]="i%2 !== 0" [class.img-position-modification-right]="i%2 == 0">
+          <img class="img-overlay-txt left" [class.right]="i%2 == 0" src="{{ valueP.imagePath }}" height="333" width="636">
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+  </div>
+</div>
+<!--Value Proposition-->

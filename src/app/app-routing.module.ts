@@ -1,41 +1,31 @@
-import {Routes, RouterModule} from '@angular/router';
-import {HomeBlComponent} from './home-bl/home-bl.component';
-import {LoginComponent} from './auth/login/login.component';
-import {SignUpComponent} from './auth/sign-up/sign-up.component';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {ContactUsComponent} from './contact-us/contact-us.component';
-import {FeaturesComponent} from './features/features.component';
-import {OurSolutionsComponent} from './our-solutions/our-solutions.component';
-import {PricingComponent} from './pricing/pricing.component';
-import {AppHomeComponent} from './app-home/app-home.component';
 import {AuthGuard, LoggedInUserGuard} from './services/auth-guard.service';
-import {OverviewAnalysisComponent} from './app-home/overview/overview-analysis/overview-analysis.component';
-import {OverviewContentComponent} from './app-home/overview/overview-content/overview-content.component';
-import {OverviewComponent} from './app-home/overview/overview.component';
-import {ContentComponent} from './app-home/content/content.component';
-import {AllContentComponent} from './app-home/content/all-content/all-content.component';
-import {ContentProductionComponent} from './app-home/content/content-production/content-production.component';
-import {InstagramComponent} from './app-home/content/instagram/instagram.component';
-import {CalendarComponent} from './app-home/calendar/calendar.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeBlComponent, canActivate: [LoggedInUserGuard]},
-  {path: 'login', component: LoginComponent, canActivate: [LoggedInUserGuard]},
-  {path: 'sign-up', component: SignUpComponent, canActivate: [LoggedInUserGuard]},
-  {path: 'contact-us', component: ContactUsComponent},
-  {path: 'features', component: FeaturesComponent},
-  {path: 'solutions', component: OurSolutionsComponent},
-  {path: 'pricing', component: PricingComponent},
-  {
-    path: 'overview', canActivate: [AuthGuard], component: AppHomeComponent, children: [
-      {path: 'content-overview', component: OverviewContentComponent},
-      {path: 'analysis-overview', component: OverviewAnalysisComponent},
-      {path: 'content', redirectTo: 'content/production'},
-      {path: 'content/production', component: ContentProductionComponent},
-      {path: 'content/all', component: AllContentComponent},
-      {path: 'calendar', component: CalendarComponent},
-    ]
-  },
+  // {path: '', component: HomeBlComponent, canActivate: [LoggedInUserGuard]},
+  {path: '', loadChildren: './core/home-bl/home-bl.module#HomeBlModule', canActivate: [LoggedInUserGuard]},
+  // {path: '', loadChildren: './core/core.module#CoreModule', canActivate: [LoggedInUserGuard]},
+  // {path: '', component: CoreComponent},
+  // {path: '', component: HomeBlComponent, canActivate: [LoggedInUserGuard]},
+  {path: 'app', loadChildren: './auth/auth.module#AuthModule'},
+  // {path: 'login', loadChildren: './auth/auth.module#AuthModule', canActivate: [LoggedInUserGuard]},
+  // {path: 'sign-up', loadChildren: './auth/auth.module#AuthModule', canActivate: [LoggedInUserGuard]},
+  {path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule'},
+  {path: 'features', loadChildren: './features/features.module#FeaturesModule'},
+  {path: 'solutions', loadChildren: './our-solutions/our-solutions.module#OurSolutionsModule'},
+  {path: 'pricing', loadChildren: './pricing/pricing.module#PricingModule'},
+  {path: 'home', loadChildren: './app-home/app-home.module#AppHomeModule', canActivate: [AuthGuard]},
+  // {
+  //   path: 'instagram-overview', canActivate: [AuthGuard], component: AppHomeComponent, children: [
+  //     {path: 'content-instagram-overview', component: OverviewContentComponent},
+  //     {path: 'analysis-instagram-overview', component: OverviewAnalysisComponent},
+  //     {path: 'content', redirectTo: 'content/production'},
+  //     {path: 'content/production', component: ContentProductionComponent},
+  //     {path: 'content/all', component: AllContentComponent},
+  //     {path: 'calendar', component: CalendarComponent},
+  //   ]
+  // },
   {path: '**', redirectTo: ''}, /*send client to home page when ever he goes to undefined url in site*/
 ];
 

@@ -34,6 +34,7 @@
   border-radius: 5px;
   position: absolute;
   margin-top: 158px; //This will be apply in firefox
+  margin-bottom: 70px;
   padding-top: 10px;
   //background-size: 100% 78px; // first number for width and second number for height of background
 }
@@ -41,6 +42,12 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .front-rectangle {
     margin-top: 79px; //This will be apply in chrome
+  }
+}
+
+@-moz-document url-prefix() {
+  .front-rectangle {
+    margin-top: 225px;
   }
 }
 
@@ -95,8 +102,12 @@ input.ng-invalid.ng-dirty {
 }
 
 .flex-box-position {
-  margin-bottom: 380px;
+  //margin-bottom: 380px;
   max-width: 659px;
+  flex-grow: 1;
+  position: absolute;
+  top: 8px;
+  width: 100%;
 }
 
 .flex-box-txt {
@@ -171,8 +182,10 @@ input.ng-invalid.ng-dirty {
   display: inline-flex;
   position: relative;
   width: 44%;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 10px;
+  text-align: right;
 }
 
 .flex-box3-txt {
@@ -190,7 +203,7 @@ input.ng-invalid.ng-dirty {
   position: absolute;
   width: 273px;
   float: right;
-  padding-right: 3px;
+  right: 20px;
 }
 
 .help-block1 {
@@ -199,10 +212,13 @@ input.ng-invalid.ng-dirty {
   font-weight: 500;
   display: block;
   margin-top: 5px;
-  width: 506px;
+  //width: 506px;
   direction: rtl;
   position: absolute;
+  right: 150px;
   text-align: right;
+  //right: 0;
+  //left: 220px;
 }
 
 /* Create a custom checkbox */
@@ -228,7 +244,6 @@ input.ng-invalid.ng-dirty {
   display: none; /*hide original SELECT element:*/
 }
 
-
 .select-dropDown {
   height: 34px;
   width: 398px;
@@ -244,6 +259,7 @@ input.ng-invalid.ng-dirty {
   -webkit-appearance: none; /*Removes default chrome and safari style*/
   -moz-appearance: none; /* Removes Default Firefox style*/
   cursor: pointer;
+  background-color: white;
 }
 
 select:focus {
@@ -252,4 +268,88 @@ select:focus {
 
 .option-style {
   color: black;
+}
+
+// Responsive Part
+@media screen and (max-width: 992px) {
+  .front-rectangle {
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .back-rectangle {
+    width: 96%;
+  }
+  .front-rectangle {
+    width: 92.5%;
+    margin-bottom: 70px;
+  }
+  .flex-box3-txt {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  input[type=text] {
+    width: 100%;
+  }
+  .help-block1 {
+    padding-right: 3.5%;
+    width: 100%;
+    right: 20%;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .back-rectangle {
+    width: 96%;
+    height: 754px;
+  }
+  .front-rectangle {
+    width: 92.5%;
+    margin-bottom: 70px;
+    height: 800px;
+  }
+  .flex-box2-txt {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  input[type=text] {
+    width: 91%;
+  }
+  .select-dropDown {
+    width: 91%;
+  }
+  .flex-box3-txt {
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+  .help-block {
+    margin-top: 5px;
+    width: 100%;
+    text-align: right;
+    padding-right: 5%;
+  }
+  .help-block1 {
+    margin-top: 5px;
+    width: 100%;
+    text-align: right;
+    padding-right: 5%;
+    float: right;
+    right: 20px;
+  }
+  .check-box-position {
+    margin-right: 9%;
+    margin-left: 0;
+    width: 40%;
+    text-align: right;
+  }
+  .checkbox-position-mobile-set {
+    padding-right: 9%;
+    padding-left: 4%;
+  }
 }

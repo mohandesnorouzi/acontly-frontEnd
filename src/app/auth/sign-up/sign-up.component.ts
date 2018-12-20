@@ -1,6 +1,6 @@
 import {Component, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 import {FormValidation} from '../../services/form-validation.service';
 import {CompanySizeService} from '../../services/company-size.service';
@@ -55,6 +55,14 @@ export class SignUpComponent implements OnInit, OnDestroy {
               private formvalidation: FormValidation, private companysize: CompanySizeService,
               private industry: IndustryService, private roles: CompanyRoleService) {
     this.renderer.setStyle(document.body, 'background-color', '#E7fff4');
+
+    // Make page start from top
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+
   }
 
   ngOnInit() {

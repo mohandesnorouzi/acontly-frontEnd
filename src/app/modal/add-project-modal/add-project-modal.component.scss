@@ -1,0 +1,101 @@
+.modal-container {
+  height: 100%;
+  width: 100%;
+}
+
+.modal-size {
+  height: 452px;
+  width: 673px;
+  border-radius: 5px;
+}
+
+input[type=text] {
+  height: 34px;
+  width: 398px;
+  border-radius: 18px;
+  border: 1px solid #55d6be;
+  direction: rtl;
+  padding-right: 20px;
+  font-size: 13px;
+  color: black;
+  margin-top: 25px;
+  outline: none !important;
+}
+
+input[type=text]:focus {
+  border: 1px solid #6c299b;
+}
+
+input[type=submit] {
+  background-color: #E7fff4;
+}
+
+// Removing the yellow autoFill background in chrome
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+input.ng-invalid.ng-dirty {
+  border: 1px solid #c90000;
+}
+
+::placeholder {
+  color: #c2c2c2;
+}
+
+.help-block {
+  font-size: 11px;
+  color: #c90000;
+  font-weight: 500;
+  display: block;
+  margin-top: 5px;
+  width: 506px;
+  direction: rtl;
+  position: absolute;
+  text-align: right;
+  margin-right: 125px;
+}
+
+.select-dropDown {
+  height: 34px;
+  width: 398px;
+  border-radius: 18px;
+  font-weight: 500;
+  border: 1px solid #55d6be;
+  direction: rtl;
+  padding-right: 20px;
+  font-size: 13px;
+  color: black;
+  margin-top: 25px;
+  outline: none;
+  -webkit-appearance: none; /*Removes default chrome and safari style*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  cursor: pointer;
+}
+
+select:focus {
+  border: 1px solid #6c299b;
+}
+
+.option-style {
+  color: black;
+}
+
+.create-project-btn-position {
+  display: block;
+}
+
+.create-project-btn {
+  background-color: #6c299b;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: auto;
+  display: inline-block;
+  border: none;
+  box-shadow: none;
+}

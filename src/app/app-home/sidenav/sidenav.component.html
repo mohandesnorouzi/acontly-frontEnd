@@ -1,138 +1,185 @@
 <div class="d-rtl">
 
-  <div class="narrowSideNavBar" id="closeSideNav" style="text-align: right;">
+  <div #closeSideNav class="narrowSideNavBar" id="closeSideNav" style="text-align: right;">
 
     <div class="narrowSideNavBar-scroll">
 
-      <li class="li-margin-icon">
-        <a class="icon-menu" (click)="Open()"></a>
-      </li>
+
+      <div class="icon-div">
+        <mat-icon svgIcon="menu" class="icon-style" (click)="Open()"></mat-icon>
+      </div>
+
+      <div class="icon-div">
+        <mat-icon svgIcon="calendar" class="icon-style"
+                  (click)="overviewSideNav();overviewClick('overview')"
+                  [ngClass]="{'current-icon' : iconActive == 'overview'}"></mat-icon>
+      </div>
+      <!--<li class="li-margin-icon">-->
+      <!--<a class="icon-Calendar"-->
+      <!--(click)="overviewSideNav();clickIcon('instagram-overview');overviewClick('instagram-overview')"-->
+      <!--[ngClass]="{'current-icon' : iconActive == 'instagram-overview'}"-->
+      <!--routerLinkActive="active" routerLink="./analysis-instagram-overview"></a>-->
+      <!--</li>-->
+
+      <hr class="hr-style" style="">
+
+      <div class="icon-div">
+        <mat-icon svgIcon="content" class="icon-style"
+                  (click)="subSideNav('content-production');contentClick(contentCurrentPosition)"
+                  [ngClass]="{'current-icon' : iconActive == 'content-production' || iconActive == 'all-content'}"
+                  ></mat-icon>
+      </div>
+
+      <div class="icon-div">
+        <mat-icon svgIcon="calendar" class="icon-style"
+                  (click)="overviewSideNav();calendarClick('calendar')"
+                  [ngClass]="{'current-icon' : iconActive == 'calendar'}"
+                  ></mat-icon>
+      </div>
+
+      <div class="icon-div">
+        <mat-icon svgIcon="team member" class="icon-style"
+                  (click)="overviewSideNav();teamMemberClick('team member')"
+                  [ngClass]="{'current-icon' : iconActive == 'team member'}"></mat-icon>
+      </div>
+
+      <div class="icon-div">
+        <mat-icon svgIcon="notification" class="icon-style"
+                  (click)="subSideNav('content-production')"></mat-icon>
+      </div>
 
 
-      <li class="li-margin-icon">
-        <a class="icon-Calendar"
-           (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
-           [ngClass]="{'current-icon' : iconActive == 'overview'}"
-           routerLinkActive="active" routerLink="./analysis-overview"></a>
-      </li>
+      <div class="icon-div">
+        <mat-icon svgIcon="analyze" class="icon-style"
+                  (click)="subSideNav('content-production')"></mat-icon>
+      </div>
 
-      <hr class="hr-style" style="margin-bottom: -16px">
+      <div class="icon-div">
+        <mat-icon svgIcon="CRM" class="icon-style"
+                  (click)="subSideNav('content-production')"></mat-icon>
+      </div>
 
 
-      <li class="li-margin-icon">
-        <a class="icon-content"
-           (click)="subSideNav('content-production');clickIcon('content-production');contentClick(contentCurrentPosition)"
-           [ngClass]="{'current-icon' : iconActive == 'content-production','current-txt' : linkActive == 'content-production'}"
-           routerLinkActive="active" routerLink="./content/production"
-        ></a>
-      </li>
+      <div class="icon-div">
+        <mat-icon svgIcon="project" class="icon-style"
+                  (click)="subSideNav('content-production')"></mat-icon>
+      </div>
 
-      <li class="li-margin-icon">
-        <a class="icon-Calendar"
-           (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
-           [ngClass]="{'current-icon' : iconActive == 'calendar'}"
-           routerLinkActive="active" routerLink="./calendar">
-
-        </a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-team-member"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-notification"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-analyze"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-CRM"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
-      </li>
-
-      <li class="li-margin-icon">
-        <a class="icon-project"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')"></a>
-      </li>
 
     </div>
   </div>
 
 
-  <div class="main-sideNavBar" id="openSideNav" style="text-align: right">
+  <div #openSideNav class="main-sideNavBar" id="openSideNav" style="text-align: right">
 
     <div class="main-sideNavBar-scroll">
 
-      <li class="li-margin-icon" style="direction: rtl">
-        <a class="icon-menu" (click)="Close()"></a>
-      </li>
+      <!--<li class="li-margin-icon" style="direction: rtl">-->
+      <!--<a class="icon-menu" (click)="Close()"></a>-->
+      <!--</li>-->
+      <div class="icon-div">
+        <mat-icon svgIcon="menu" class="icon-style" (click)="Close()"></mat-icon>
+      </div>
 
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-Calendar"
-           (click)="overviewSideNav();clickIcon('overview');overviewClick('overview')"
-           [ngClass]="{'current-icon' : iconActive == 'overview','current-txt' : linkActive == 'overview'}"
-           routerLinkActive="active" routerLink="./analysis-overview">
-          بررسی اجمالی</p>
-      </li>
+      <div class="icon-div" (mouseenter)="onHover('calendar1','calendar-icon1')"
+           (mouseleave)="onHoverOut('calendar1','calendar-icon1')"
+           (click)="overviewSideNav();overviewClick('overview')">
 
-      <hr class="hr-style" style="margin-bottom: -16px">
+        <mat-icon svgIcon="calendar" class="icon-style" id="calendar-icon1"
+                  [ngClass]="{'current-icon' : iconActive == 'overview'}"></mat-icon>
+        <span class="sideNavBar-txt" id="calendar1"
+              [ngClass]="{'current-txt' : linkActive == 'overview'}">
+            بررسی اجمالی</span>
+      </div>
 
-      <li class="li-margin-icon" style="margin-top: 5px" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-content"
-           (click)="subSideNav('content-production');clickIcon('content-production');contentClick(contentCurrentPosition)"
-           [ngClass]="{'current-icon' : iconActive == 'content-production','current-txt' : linkActive == 'content-production'}"
-           routerLinkActive="active" routerLink="./content/production">محتوا</p>
-      </li>
+      <hr class="hr-style" style="">
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-Calendar"
-           (click)="overviewSideNav();clickIcon('calendar');calendarClick('calendar')"
-           [ngClass]="{'current-icon' : iconActive == 'calendar','current-txt' : linkActive == 'calendar'}"
-           routerLinkActive="active" routerLink="./calendar">تقویم</p></li>
+      <div class="icon-div" (mouseenter)="onHover('content','content-icon')"
+           (mouseleave)="onHoverOut('content','content-icon')"
+           (click)="subSideNav('content-production');contentClick(contentCurrentPosition)">
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-team-member"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">اعضای تیم</p></li>
+        <mat-icon svgIcon="content" class="icon-style" id="content-icon"
+                  [ngClass]="{'current-icon' : iconActive == 'content-production' || iconActive == 'all-content'}"></mat-icon>
+        <span class="sideNavBar-txt" id="content"
+              [ngClass]="{'current-txt' : linkActive == 'content-production' || linkActive == 'all-content'}">
+            محتوا</span>
+      </div>
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-notification"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">اعلان ها</p></li>
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-analyze"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">آنالیز</p></li>
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-CRM"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">مدیریت مخاطبان</p></li>
+      <div class="icon-div" (mouseenter)="onHover('calendar','calendar-icon')"
+           (mouseleave)="onHoverOut('calendar','calendar-icon')"
+           (click)="overviewSideNav();calendarClick('calendar')">
 
-      <li class="li-margin-icon" style="direction: rtl;cursor: pointer">
-        <p class="sideNavBar-txt icon-project"
-           routerLinkActive="active" routerLink=""
-           (click)="subSideNav('content-production')">مدیریت پروژه ها</p></li>
+        <mat-icon svgIcon="calendar" class="icon-style" id="calendar-icon"
+                  [ngClass]="{'current-icon' : iconActive == 'calendar'}"></mat-icon>
+        <span class="sideNavBar-txt" id="calendar"
+              [ngClass]="{'current-txt' : linkActive == 'calendar'}">
+            تقویم</span>
+      </div>
+
+
+      <div class="icon-div" (mouseenter)="onHover('team member','team member-icon')"
+           (mouseleave)="onHoverOut('team member','team member-icon')"
+           (click)="overviewSideNav();teamMemberClick('team member')">
+
+        <mat-icon svgIcon="team member" class="icon-style" id="team member-icon"
+                  [ngClass]="{'current-icon' : iconActive == 'team member'}"></mat-icon>
+        <span class="sideNavBar-txt" id="team member"
+              [ngClass]="{'current-txt' : linkActive == 'team member'}">
+            اعضای تیم</span>
+      </div>
+
+
+      <div class="icon-div" (mouseenter)="onHover('notification','notification-icon')"
+           (mouseleave)="onHoverOut('notification','notification-icon')">
+
+        <mat-icon svgIcon="notification" class="icon-style" id="notification-icon"></mat-icon>
+        <span class="sideNavBar-txt" id="notification"
+              (click)="subSideNav('content-production')">
+            اعضای تیم</span>
+      </div>
+
+
+
+      <div class="icon-div" (mouseenter)="onHover('analyze','analyze-icon')"
+           (mouseleave)="onHoverOut('analyze','analyze-icon')">
+
+        <mat-icon svgIcon="analyze" class="icon-style" id="analyze-icon"></mat-icon>
+        <span class="sideNavBar-txt" id="analyze"
+              (click)="subSideNav('content-production')">
+            آنالیز</span>
+      </div>
+
+
+      <div class="icon-div" (mouseenter)="onHover('CRM','CRM-icon')"
+           (mouseleave)="onHoverOut('CRM','CRM-icon')">
+
+        <mat-icon svgIcon="CRM" class="icon-style" id="CRM-icon"></mat-icon>
+        <span class="sideNavBar-txt" id="CRM"
+              (click)="subSideNav('content-production')">
+            مدیریت مخاطبان</span>
+      </div>
+
+
+
+      <div class="icon-div" (mouseenter)="onHover('project','project-icon')"
+           (mouseleave)="onHoverOut('project','project-icon')">
+
+        <mat-icon svgIcon="project" class="icon-style" id="project-icon"></mat-icon>
+        <span class="sideNavBar-txt" id="project"
+              (click)="subSideNav('content-production')">
+            مدیریت پروژه ها</span>
+      </div>
+
 
     </div>
 
   </div>
 
 
-  <div class="subtitle-sideNavBar" id="subTitleSideNav" style="text-align: right">
+  <div #subTitleSideNav class="subtitle-sideNavBar" id="subTitleSideNav" style="text-align: right">
 
     <div *ngIf="titleID === 'content-production'" style="padding-top: 68px">
 
@@ -140,15 +187,13 @@
         <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
            (click)="contentClick('content-production')"
            [ngClass]="{'current-txt' : linkActive == 'content-production'}"
-           routerLinkActive="active" routerLink="./content/production"
         >
           ایجاد محتوا</p></li>
 
       <li class="">
         <p class="sideNavBarSubtitle-txt" style="cursor: pointer"
            (click)="contentClick('all-content')"
-           [ngClass]="{'current-txt' : linkActive == 'all-content'}"
-           routerLinkActive="active" routerLink="./content/all">
+           [ngClass]="{'current-txt' : linkActive == 'all-content'}">
           همه محتواها</p></li>
 
     </div>

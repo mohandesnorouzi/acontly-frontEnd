@@ -1,37 +1,26 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-  Renderer2,
-  ViewChild,
-  ViewEncapsulation
-} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {SidenavService} from '../../services/sidenav.service';
-import {AuthService} from '../../services/auth.service';
-import {Router} from '@angular/router';
-import {InstagramComponent} from '../content/instagram/instagram.component';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AppGlobals} from '../../services/app-globals.service';
-import {p} from '@angular/core/src/render3';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss', '../content/instagram/instagram.component.scss']
+  styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent implements OnInit, OnDestroy {
 
   linkActive: string;
   iconActive: string;
-  currentURL: string;
+  isOpen: string;
   contentCurrentPosition: string;
-
+  routURL: string;
+  x: Subscription;
   @ViewChild('closeSideNav') closeSideNav: ElementRef;
   @ViewChild('openSideNav') openSideNav: ElementRef;
   @ViewChild('subTitleSideNav') subTitleSideNav: ElementRef;
+  @ViewChild('boxPosition') boxPosition: ElementRef;
 
 
   @Input() titleID: string;
@@ -39,146 +28,123 @@ export class SidenavComponent implements OnInit {
   @HostListener('mouseenter') mouseover(eventData: Event) {
   }
 
-  constructor(private sidenavService: SidenavService, public authService: AuthService,
-              private router: Router, public instaComp: InstagramComponent,
-              private renderer: Renderer2, private appGlobal: AppGlobals) {
+  constructor(private sidenavService: SidenavService, private router: Router,
+              private renderer: Renderer2, private appGlobal: AppGlobals, private activeRout: ActivatedRoute) {
+    this.appGlobal.activeElements.subscribe((value: string) => {
+      if (value === 'overview' || value === 'calendar') {
+        this.overviewSideNav();
+      }
+      this.iconActive = value;
+      this.linkActive = value;
+    });
+
   }
 
   ngOnInit() {
+    this.subTitleSideNav.nativeElement.style.width = '0';
   }
 
   // Manage opening and closing of main part of sideNav
   Open() {
-
+    this.isOpen = 'open';
     this.appGlobal.checkMainSideNav = true;
-    document.getElementById('openSideNav').style.width = '180px';
-    document.getElementById('closeSideNav').style.width = '0';
-    document.getElementById('subTitleSideNav').style.width = '0';
-
-    const boxProperty = document.getElementById('boxPosition');
-    if (boxProperty !== null) {
-      // document.getElementById('boxPosition').style.marginRight = '248px';
-      document.getElementById('boxPosition').style.marginRight = '204px';
-    }
-
+    this.openSideNav.nativeElement.style.width = '180px';
+    this.closeSideNav.nativeElement.style.width = '0';
+    this.subTitleSideNav.nativeElement.style.width = '0';
+    this.appGlobal.activeBox.emit(true);
   }
 
   Close() {
-
     this.appGlobal.checkMainSideNav = false;
     this.appGlobal.checksubTitleSideNav = false;
-    document.getElementById('openSideNav').style.width = '0';
-    document.getElementById('subTitleSideNav').style.width = '0';
-    document.getElementById('closeSideNav').style.width = '60px';
-
-    const boxProperty = document.getElementById('boxPosition');
-    if (boxProperty !== null) {
-      // document.getElementById('boxPosition').style.marginRight = '108px';
-      document.getElementById('boxPosition').style.marginRight = '104px';
-    }
+    this.openSideNav.nativeElement.style.width = '0';
+    this.closeSideNav.nativeElement.style.width = '60px';
+    this.subTitleSideNav.nativeElement.style.width = '0';
+    this.appGlobal.activeBox.emit(false);
   }
 
   overviewSideNav() {
-    const navProperty = document.getElementById('subTitleSideNav');
-    const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
-    const boxProperty = document.getElementById('boxPosition');
-
-    if (navWidth !== '0px') {
-      document.getElementById('subTitleSideNav').style.width = '0';
+    if (this.subTitleSideNav.nativeElement.style.width !== '0px') {
+      this.subTitleSideNav.nativeElement.style.width = '0';
     }
-    // this.Open();
   }
 
   subSideNav(id) {
 
-    const navProperty = document.getElementById('subTitleSideNav');
-    const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
-    const openNavProperty = document.getElementById('openSideNav');
-    const openNavWidth = window.getComputedStyle(openNavProperty, null).getPropertyValue('width');
-    const boxProperty = document.getElementById('boxPosition');
-
-
-    if (navWidth === '0px') {
+    if (this.subTitleSideNav.nativeElement.style.width === '0px') {
       // Open
       this.appGlobal.checksubTitleSideNav = true;
-      document.getElementById('subTitleSideNav').style.width = '120px';
+      this.subTitleSideNav.nativeElement.style.width = '120px';
       this.titleID = id;
 
-
-      if (boxProperty !== null) {
-        // document.getElementById('boxPosition').style.marginRight = '248px';
-        document.getElementById('boxPosition').style.marginRight = '204px';
-      }
+      this.appGlobal.activeBox.emit(true);
 
     } else {
       // Close
       this.appGlobal.checksubTitleSideNav = false;
-      document.getElementById('subTitleSideNav').style.width = '0';
-
-      if (boxProperty !== null && openNavWidth === '0px') {
-        // document.getElementById('boxPosition').style.marginRight = '108px';
-        document.getElementById('boxPosition').style.marginRight = '104px';
-      }
+      this.subTitleSideNav.nativeElement.style.width = '0';
+      this.appGlobal.activeBox.emit(false);
     }
   }
 
-  clickIcon(value) {
-    this.iconActive = value;
-    this.linkActive = value;
-    // console.log(this.linkActive);
+  // Change color of element when mouse hover
+  onHover(id1, id2) {
+    document.getElementById(id1).style.color = '#56ecdb';
+    document.getElementById(id2).style.color = '#56ecdb';
+  }
+
+  // Change color of element when mouse hover out
+  onHoverOut(id1, id2) {
+    document.getElementById(id1).style.color = '#6b289b';
+    document.getElementById(id2).style.color = '#6b289b';
   }
 
   contentClick(value) {
     if (!value) {
-      this.linkActive = this.iconActive;
-      this.router.navigate(['overview/content/production']);
+      this.iconActive = 'content-production';
+      this.linkActive = 'content-production';
+      this.routURL = localStorage.getItem('activeAccountMedium') + '/content-production';
+      this.router.navigate([this.routURL], {relativeTo: this.activeRout});
       this.contentCurrentPosition = 'content-production';
 
     } else if (value === 'content-production') {
+      this.iconActive = value;
       this.linkActive = value;
-      this.router.navigate(['overview/content/production']);
+      this.routURL = localStorage.getItem('activeAccountMedium') + '/content-production';
+      this.router.navigate([this.routURL], {relativeTo: this.activeRout});
       this.contentCurrentPosition = 'content-production';
 
     } else if (value === 'all-content') {
+      this.iconActive = value;
       this.linkActive = value;
-      this.router.navigate(['overview/content/all']);
+      this.router.navigate(['home/instagram/all-content']);
       this.contentCurrentPosition = 'all-content';
     }
-
-    // setTimeout(() => {
-    //   this.currentURL = this.instaComp.getURL();
-    //   // console.log(this.currentURL);
-    // }, 1000);
-
-    // console.log(this.linkActive);
-
-    // const navProperty = document.getElementById('subTitleSideNav');
-    // const navWidth = window.getComputedStyle(navProperty, null).getPropertyValue('width');
-    // const boxProperty = document.getElementById('boxPosition');
-    //
-    // if (navWidth !== '0') {
-    //
-    //   if (boxProperty !== null) {
-    //     document.getElementById('boxPosition').style.marginRight = '204px';
-    //   }
-    // } else {
-    //   if (boxProperty !== null) {
-    //     document.getElementById('boxPosition').style.marginRight = '104px';
-    //   }
-    // }
-
-
   }
 
 
   overviewClick(value) {
+    this.iconActive = value;
     this.linkActive = value;
+    this.router.navigate(['home/instagram/overview']);
   }
 
   calendarClick(value) {
+    this.iconActive = value;
     this.linkActive = value;
+    this.router.navigate(['home/calendar']);
   }
 
+  teamMemberClick(value) {
+    this.iconActive = value;
+    this.linkActive = value;
+    this.router.navigate(['home/team-member']);
+  }
+
+
+  ngOnDestroy() {
+    // this.x.unsubscribe();
+  }
 }
 
 

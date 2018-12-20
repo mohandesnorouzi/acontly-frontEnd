@@ -1,0 +1,7 @@
+<app-header-bl *ngIf="router.url !== '/app/login' &&
+      router.url !== '/app/sign-up' && !appGlobal.isAuthenticated"></app-header-bl>
+
+<app-sideheader-bl *ngIf="router.url !== '/app/login' &&
+      router.url !== '/app/sign-up' && !appGlobal.isAuthenticated"></app-sideheader-bl>
+
+<app-header-al *ngIf="appGlobal.isAuthenticated"></app-header-al>

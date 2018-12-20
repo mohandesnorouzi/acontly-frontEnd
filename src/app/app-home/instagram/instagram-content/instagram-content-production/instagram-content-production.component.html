@@ -1,0 +1,113 @@
+<div class="content-container d-rtl">
+
+
+  <div #boxPosition class="main-rectangular d-rtl" id="boxPosition" (window:resize)="onResize()">
+
+    <div class="social-title">
+      <mat-icon svgIcon="instagram"></mat-icon>
+      <span class="txt">اینستاگرام</span>
+    </div>
+
+    <form [formGroup]="createPostForm">
+      <!--// syncing form with my html in this line-->
+      <div class="file-txt-div">
+
+        <div class="file-rectangular">
+
+          <mat-icon svgIcon="addFiles" class="icon-addFiles"></mat-icon>
+          <div class="upload-txt">بارگذاری عکس یا ویدئو</div>
+          <div class="upload-tools-circle">
+            <mat-icon svgIcon="delete" class="icon-delete"></mat-icon>
+          </div>
+          <div class="upload-tools-circle">
+            <mat-icon svgIcon="editFiles" class="icon-edit"></mat-icon>
+          </div>
+          <div class="upload-tools-circle">
+            <mat-icon svgIcon="previewFile" class="icon-preview"></mat-icon>
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+          <textarea type="text" style="margin-bottom: 25px"
+                    id="textAreaScroll"
+                    formControlName="text"
+                    placeholder="متن ..."
+                    (keyup)="postLengthCheck('text')"
+                    maxlength="2200">
+          </textarea>
+          <div class="layer"></div>
+          <span *ngIf="createPostForm.controls['text'].valid"
+                class="text-counter">{{validTextLength}}</span>
+          <div class="pre-saved-circle">
+            <mat-icon svgIcon="preSavedTxt" class="icon-preSavedTxt"></mat-icon>
+          </div>
+          <mat-icon svgIcon="emoji" class="icon-emoji"></mat-icon>
+
+          
+
+          <div>
+            <span style="font-size: 14px;color: black;font-weight: 500">خاموش کردن کامنت گذاری</span>
+            <label class="switch" style="right: 10px;top: 5px;margin-bottom: 0">
+              <input type="checkbox"
+                     formControlName="SwitchToggle"
+                     (click)="SwitchStatus()">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+
+          <textarea *ngIf="!mySwitch;else switch"
+                    style="margin-top: 10px;margin-bottom: 13px" type="text"
+                    id="commentAreaScroll"
+                    formControlName="comment"
+                    placeholder="کامنت اول ..."
+                    (keyup)="postLengthCheck('comment')">
+          </textarea>
+          <ng-template #switch>
+            <textarea readonly
+                      style="margin-top: 10px;margin-bottom: 13px" type="text"
+                      id="commentAreaOffScroll"
+                      [value]="searchValue"
+                      formControlName="comment"
+                      placeholder="کامنت اول ...">
+            </textarea>
+          </ng-template>
+
+          <!--<span *ngIf="!mySwitch;else switchIcon" class="icon-user1"></span>-->
+          <!--<ng-template #switchIcon>-->
+          <!--<span class="icon-user1-off"></span>-->
+          <!--</ng-template>-->
+
+          <span *ngIf="!mySwitch && createPostForm.controls['comment'].valid;else switchIcon"
+                class="comment-counter">{{validCommentLength}}</span>
+          <ng-template #switchIcon>
+            <span></span>
+          </ng-template>
+
+
+          <div style="width: 101%;text-align: left">
+            <button type="button" class="btn draft-btn">
+              <span>ذخیره</span>
+            </button>
+            <button type="button" class="btn publishNow-btn">
+              <span>الان</span>
+            </button>
+            <button type="button" class="btn schedule-btn">
+              بعدا
+            </button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </form>
+
+
+  </div>
+</div>
+

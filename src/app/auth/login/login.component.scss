@@ -35,14 +35,19 @@
   border-radius: 5px;
   position: absolute;
   margin-top: 100px;
+  margin-bottom: 70px;
   padding-top: 40px;
   //background-size: 100% 78px; // first number for width and second number for height of background
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   .front-rectangle {
     margin-top: 50px;
   }
+}
+
+.form-group {
+  margin-bottom: 16px;
 }
 
 .title-property {
@@ -95,8 +100,11 @@ input.ng-invalid.ng-dirty {
 }
 
 .flex-box-position {
-  margin-bottom: 380px;
   max-width: 659px;
+  flex-grow: 1;
+  position: absolute;
+  top: 8px;
+  width: 100%;
 }
 
 .flex-box-txt {
@@ -107,7 +115,10 @@ input.ng-invalid.ng-dirty {
 }
 
 .check-box-position {
-  margin-right: 145px;
+  width: 100%;
+  position: relative;
+  left: 120px;
+  //margin-right: 145px;
   cursor: pointer;
   font-size: 13px;
   line-height: 22px;
@@ -167,7 +178,6 @@ input.ng-invalid.ng-dirty {
   margin-top: 90px;
 }
 
-
 .help-block {
   font-size: 11px;
   color: #c90000;
@@ -178,4 +188,50 @@ input.ng-invalid.ng-dirty {
   direction: rtl;
   position: absolute;
   text-align: right;
+}
+
+// Responsive Part
+@media screen and (max-width: 768px) {
+  .back-rectangle {
+    width: 96%;
+  }
+  .front-rectangle {
+    width: 92.5%;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+  .form-group {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  input[type=text] {
+    width: 100%;
+  }
+  .help-block {
+    padding-right: 3.5%;
+    width: 100%;
+    right: 20%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  input[type=text] {
+    width: 91%;
+  }
+  .check-box-position {
+    text-align: right;
+    padding-right: 32px;
+    left: 0;
+  }
+  .help-block {
+    margin-top: 5px;
+    width: 100%;
+    text-align: right;
+    padding-right: 5%;
+    float: right;
+    right: 20px;
+  }
 }

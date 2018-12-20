@@ -1,0 +1,60 @@
+<!--NavBar in mobile-->
+<nav class="navbar navbar-expand header-setting" id="NoDesktop">
+
+
+  <div #menuIcon class="m-auto menuIconDiv-property">
+
+    <mat-icon svgIcon="menu" class="menuIcon-property" (click)="openNav()"></mat-icon>
+    <!--Logo-->
+    <!--<a routerLinkActive="active" routerLink="/" class="navbar-brand" style="margin:0;position: relative">-->
+    <!--<img src="/assets/imgs/logo.png" height="42" width="70">-->
+    <!--</a>-->
+    <!--Logo-->
+  </div>
+
+  <div #mySideNav class="sideNav" id="mySideNav" (clickOutside)="onClickedOutside($event)">
+
+    <div class="closeIcon-place">
+      <mat-icon svgIcon="X" class="icon-style closeIcon-property" (click)="closeNav()"></mat-icon>
+    </div>
+
+    <div class="icon-div" (mouseenter)="onHover('pricing','pricing-icon')"
+         (mouseleave)="onHoverOut('pricing','pricing-icon')" (click)="closeNav()">
+
+      <mat-icon svgIcon="pricing" class="icon-style" id="pricing-icon"></mat-icon>
+      <span class="link" id="pricing" routerLinkActive="active" routerLink="/pricing">
+            قیمت&nbsp;گذاری</span>
+    </div>
+
+    <div class="icon-div" (mouseenter)="onHover('features','features-icon')"
+         (mouseleave)="onHoverOut('features','features-icon')" (click)="closeNav()">
+
+      <mat-icon svgIcon="features" class="icon-style" id="features-icon"></mat-icon>
+      <span class="link" id="features" routerLinkActive="active" routerLink="/features">ویژگی&nbsp;ها</span>
+    </div>
+
+    <div class="icon-div" (mouseenter)="onHover('solutions','solutions-icon')"
+         (mouseleave)="onHoverOut('solutions','solutions-icon')" (click)="closeNav()">
+
+      <mat-icon svgIcon="solutions" class="icon-style" id="solutions-icon"></mat-icon>
+      <span class="link" id="solutions" routerLinkActive="active" routerLink="/solutions">راه&nbsp;کارها</span>
+    </div>
+
+    <div class="icon-div" (mouseenter)="onHover('contact-us','contact-us-icon')"
+         (mouseleave)="onHoverOut('contact-us','contact-us-icon')" (click)="closeNav()">
+
+      <mat-icon svgIcon="contact-us" class="icon-style" id="contact-us-icon"></mat-icon>
+      <span class="link" id="contact-us" routerLinkActive="active" routerLink="/contact-us">تماس&nbsp;با&nbsp;ما</span>
+    </div>
+
+    <div class="login-btn-place" (click)="closeNav()">
+      <button routerLinkActive="active" routerLink="/app/login" class="btn login-btn">
+        ورود
+      </button>
+    </div>
+
+
+  </div>
+
+</nav>
+<!--NavBar in mobile-->

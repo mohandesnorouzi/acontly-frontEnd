@@ -1,0 +1,123 @@
+.header-setting {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  direction: rtl;
+  height: 70px;
+  padding: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.menuIconDiv-property {
+  width: 100%;
+  text-align: center;
+}
+
+.menuIcon-property {
+  color: #6b289b;
+  right: 16px;
+  top: 20px;
+  position: absolute;
+  cursor: pointer;
+}
+
+// Mobile and Tablet before login
+.sideNav {
+  height: 100%;
+  width: 250px;
+  right: -250px; // send sideNav out of screen
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  //right: 0;
+  background-color: rgba(107, 40, 155, 0.9);
+  opacity: 84%;
+  overflow-x: hidden;
+  transition: 0.5s;
+  //padding-top: 60px;
+  text-align: right;
+  //box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.5);
+  list-style : none;
+}
+
+.closeIcon-place {
+  text-align: left;
+  margin-bottom: 55px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.closeIcon-property {
+  height: 14px;
+  width: 14px;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  outline: none;
+  padding-right: 20px;
+  cursor: pointer;
+  padding-top: 2px;
+  padding-bottom: 0;
+  height: 30px;
+}
+
+.icon-div {
+  display: inline-flex;
+  width: 100%;
+  justify-content: right;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-right: 70px;
+  //margin-right: 70px;
+  transition: 0.5s;
+}
+
+.icon-style {
+  color: white;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+// Css for button in top banner
+.login-btn-place {
+  width: 100%;
+  text-align: center;
+  padding-right: 51px;
+  padding-left: 56px;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 25px;
+  border: 1px solid white;
+  text-align: center;
+  line-height: 0;
+  font-size: 15px;
+  font-weight: 500;
+  height: 32px;
+  width: 136px;
+  margin-top: 35px;
+  box-shadow: none;
+  padding-top: 8px;
+  //transition: 0.9s;
+  transition: all 0.3s ease 0s;
+  //position: relative; //necessary to make context come over overlay
+  //z-index: 1; //necessary to make context come over overlay
+}
+
+@media screen and (min-width: 769px) {
+  #NoDesktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #NoDesktop {
+    display: block;
+  }
+}

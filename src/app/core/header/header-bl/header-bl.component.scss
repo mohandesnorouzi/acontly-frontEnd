@@ -1,0 +1,57 @@
+.header-setting {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  direction: rtl;
+  height: 70px;
+  padding: 0;
+  position: fixed;
+  z-index: 10;
+}
+
+.title-property {
+  font-size: 15px;
+  padding: 10px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.header-btn {
+  background-color: rgb(253, 199, 27);
+  color: black;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 40px;
+  width: 150px;
+  display: inline-block;
+  border: none;
+}
+
+.login-property {
+  font-size: 15px;
+  padding: 5px;
+  line-height: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.login-place-modify {
+  padding: 13px 13px 10px 13px;
+}
+
+// Responsive mode
+@media screen and (max-width: 992px) {
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    display: none;
+  }
+}
